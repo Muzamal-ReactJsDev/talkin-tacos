@@ -1,0 +1,26 @@
+.top-dishes-main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.top-dishes-btn{
+    background-color: transparent;
+    border-color: #06B906; 
+    height: 70px;
+    width: 50%;
+    margin-top: 20px;
+}
+.top-dishes-main-col{
+    position: relative;
+}
+.top-dishes-main-heading::before{
+    content: "";
+    display: block;
+    width: 67px;
+    height: 3px;
+    background: white;
+    left: 38%;
+    top: -15px;
+    position: absolute;
+}

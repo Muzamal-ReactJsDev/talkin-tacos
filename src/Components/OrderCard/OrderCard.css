@@ -1,0 +1,74 @@
+.cardData-main-container {
+  color: white;
+}
+.card-grid-Card-Data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  /* padding: 10px; */
+  padding-top: 12px;
+}
+
+.card-Card-Data {
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.cardbranches-icons {
+  font-size: 22px;
+}
+
+.OrderCard-button-1 {
+  width: 100%;
+  background-color: #06b906;
+  border: #06b906;
+  height: 51px;
+}
+.orderCard-time-icons-see-more {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.OrderCard-button-Links {
+  text-decoration: none;
+  color: white !important;
+}
+.OrderCard-button-1:hover,
+.OrderCard-button-1:focus,
+.OrderCard-button-1:active {
+  background-color: #06b906 !important;
+  outline: none !important;
+  border: 1px solid #06b906 !important;
+}
+
+.OrderCard-button-2 {
+  width: 100%;
+  background-color: transparent !important;
+  border-color: #06b906;
+  height: 51px;
+}
+.OrderCard-button-2:hover,
+.OrderCard-button-2:focus,
+.OrderCard-button-2:active {
+  background-color: transparent !important;
+  outline: none !important;
+  border: 1px solid #06b906 !important;
+}
+
+.cardbranches-hours{
+  cursor: pointer;
+}
+
+@media (max-width: 1224px) {
+  .card-grid-Card-Data {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .card-grid-Card-Data {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

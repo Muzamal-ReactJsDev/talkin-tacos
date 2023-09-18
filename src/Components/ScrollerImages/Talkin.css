@@ -1,0 +1,60 @@
+.image-slider-main-Tako-col-2{
+    color:white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-div-slider-images-Tacos{
+    position: relative;
+}
+.images-slider1-Tacos{
+    width: 100%;
+    background-color: rgb(50, 50,50);
+    border-radius: 10px;
+    max-width: 500px;
+    height: 400px;
+    position: absolute;
+    left: 25px;
+    top: -25px;
+}
+.images-slider2-Tacos{
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+  
+}
+.About-Talkin-Tacos-main-div{
+    position: relative;
+}
+.About-Talkin-Tacos-heading::before{
+    content: "";
+    display: block;
+    width: 85px;
+    height: 3px;
+    background: white;
+    left: 2px;
+    top: -13px;
+    position: absolute;
+
+}
+
+
+.image-slider-main-Tako-col-2{
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.5s forwards; /* Apply animation */
+}
+@keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Stay fixed at the top */
+    }
+  }
+@media only screen and (max-width:768px) {
+    .image-slider-main-Tako-col-2{
+        margin-bottom: 70px;
+    }
+  
+}

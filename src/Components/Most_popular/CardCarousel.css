@@ -1,0 +1,45 @@
+/* HorizontalScrollableCards.css */
+.scrollable-cards-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrollable-cards-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  /* padding: 16px; Adjust as needed */
+  padding: 16px 16px 16px 135px;
+  
+}
+
+.CardCarousel-links-items-cart {
+  text-decoration: none;
+  color: white;
+}
+.CardCarousel-links-items-div:hover {
+  /* border-bottom: 1px solid white; */
+  text-decoration: underline;
+}
+
+.CardCarousel {
+  flex: 0 0 auto;
+  background-color: black;
+  width: 300px; /* Adjust as needed */
+  border-radius: 10px;
+  margin-right: 16px; /* Adjust as needed */
+}
+.CardCarousel-img{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px;
+}
+.scrollable-cards-wrapper::-webkit-scrollbar{
+  width: 0.5em;
+}
+.CardCarousel-plus{
+  margin-bottom: 4px;
+  margin-left: 4px;
+  color: #06B906;
+}

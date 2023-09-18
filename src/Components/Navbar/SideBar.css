@@ -1,0 +1,62 @@
+.SideBar-main-Container {
+  line-height: 35px;
+  color: white;
+  border: 1px solid gray;
+}
+.SideBar-button-1 {
+  background-color: #06b906 !important;
+  border: 1px solid #06b906 !important;
+}
+
+.Products-links {
+  color: white;
+  text-decoration: none;
+}
+.SideBar-button-1:hover,
+.SideBar-button-1:focus,
+.SideBar-button-1:active {
+  background-color: #06b906 !important;
+  outline: none !important;
+  border: 1px solid #06b906 !important;
+}
+.SideBar-Icon {
+  font-size: 20px;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0.5em;
+}
+.sidebar {
+  height: 100vh;
+  overflow-y: scroll;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: -500px;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  background-color: rgb(13, 13, 13);
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+}
+
+.sidebar.open {
+  right: 0; /* Slide in from right */
+}
+
+.close-sidebar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebar-button-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

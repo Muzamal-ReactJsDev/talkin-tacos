@@ -1,0 +1,35 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    /* padding: 12px; */
+  }
+  
+  input[type="text"] {
+    border: none;
+    flex: 1;
+    padding: 12px;
+    outline: none;
+    border-radius: 8px;
+  }
+  
+  .search-icon {
+   
+  }
+  .search-bar-area{
+    width: 100%;
+  }
+  .search-bar-icon{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 51px;
+    height: 51px;
+    margin-left: 6px;
+    color: #777;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 10px;
+
+  }

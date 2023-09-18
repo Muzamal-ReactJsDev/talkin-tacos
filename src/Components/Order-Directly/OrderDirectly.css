@@ -1,0 +1,56 @@
+.order-directly-main-div {
+  background-image: url("../Images//order-directly");
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position-y: center;
+}
+.order-directly-back {
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  height: 500px;
+}
+.order-directly-main-containers{
+  display: flex;
+  height: 500px;
+  align-items: center;
+  justify-content: start;
+}
+
+.OrderDirectly-location {
+  width: 100%;
+  max-width: 200px;
+  height: 70px;
+  border: 1px solid #06b906;
+  background-color: transparent !important;
+}
+.OrderDirectly-location:hover,
+.OrderDirectly-location:focus,
+.OrderDirectly-location:active {
+  border: 1px solid #06b906 !important;
+  background-color: transparent !important;
+}
+.OrderDirectly-Order {
+  width: 100%;
+  margin-left: 5px;
+  max-width: 200px;
+  height: 70px;
+  border: none !important;
+  background-color: #06b906 !important;
+}
+
+@media only screen and (max-width: 474px) {
+  .OrderDirectly-Order {
+    margin-left: 0px !important;
+    margin-top: 5px;
+    width: 100%;
+    max-width: 380px;
+  }
+  .OrderDirectly-location {
+    width: 100%;
+    max-width: 380px;
+  }
+}

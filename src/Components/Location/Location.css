@@ -1,0 +1,49 @@
+.Location-Container{
+    color: white;
+}
+.Location-main-col{
+    position: relative;
+}
+
+.Location-main-heading::before{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: white;
+    left: 15px;
+    top: -34px;
+    position: absolute;
+}
+
+
+.google-map {
+    padding-bottom: 50%;
+    position: relative;
+}
+
+.google-map iframe {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+.Location-Container,
+.Location-main-col,
+.Location-main-heading {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.5s forwards; /* Apply animation */
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Stay fixed at the top */
+  }
+}
+.gmap_canvas{overflow: hidden;background: none !important;height: 445px;width: 100%;}
+
+.mapouter{position: relative;text-align: center;height: 440px;width: 100%;}
+

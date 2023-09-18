@@ -1,0 +1,25 @@
+.About-less-Talkin-Tacos::before{
+    content: "";
+    display: block;
+    width: 67px;
+    height: 3px;
+    background: white;
+    left: 2px;
+    top: -13px;
+    position: relative;
+}
+.less_talkin_button{
+    background-color: transparent !important;
+    border-color: #06B906; 
+    height: 51px;
+
+}
+
+.less_talkin_button:hover,
+.less_talkin_button:focus,
+.less_talkin_button:active{
+    background-color: transparent !important;
+    outline: none !important;
+   border: 1px solid #06B906 !important;
+    
+}

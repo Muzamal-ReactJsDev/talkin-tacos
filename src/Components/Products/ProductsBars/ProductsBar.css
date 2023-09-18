@@ -1,0 +1,12 @@
+.productsBar-main-div{
+    background-color: rgb(13, 13, 13);
+    color: white !important;
+}
+.productsBar-ScrollLink{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white !important;
+    text-decoration: none;
+    padding: 10px 20px !important;
+}

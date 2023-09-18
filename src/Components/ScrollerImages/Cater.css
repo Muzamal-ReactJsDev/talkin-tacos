@@ -1,0 +1,15 @@
+
+.cater-truck-main-div{
+    position: relative;
+}
+.cater-truck-main-heading::before{
+    content: "";
+    display: block;
+    width: 67px;
+    height: 3px;
+    background: white;
+    left: 0px;
+    top: -20px;
+    position: absolute;
+}
+

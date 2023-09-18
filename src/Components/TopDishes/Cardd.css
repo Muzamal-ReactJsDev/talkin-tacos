@@ -1,0 +1,38 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Left column, center column, right column */
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.left-images-Cardd,
+.right-images-Cardd {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.center-image-Cardd img {
+  /* width: 100%; */
+  /* height: auto; */
+  /* max-height: calc(74vh - 40px); Adjust based on your needs */
+
+  height: 50%;
+  width: 100%;
+  /* height: auto; */
+  /* max-height: calc(668px - 35px); */
+}
+
+.Cardd-Images {
+  max-width: 100%;
+  /* height: 300px; */
+  height: auto;
+}
+.top-dishes-btn:hover,
+.top-dishes-btn:focus,
+.top-dishes-btn:active {
+  background-color: transparent !important;
+  outline: none !important;
+  border: 1px solid #06b906 !important;
+}

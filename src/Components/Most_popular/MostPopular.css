@@ -1,0 +1,57 @@
+
+.most-popular-container{
+    color: white;
+   
+}
+.popular-items-button{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.popular-items-main::before{
+    content: "";
+    display: block;
+    width: 130px;
+    height: 3px;
+    background: white;
+    left: 5px;
+    top: -90%;
+    position: relative;
+}
+.popular-items-main-row{
+    position: relative;
+  
+}
+.popular-items-main,
+.popular-items-button,
+.popular-items-button-style{
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.5s forwards; /* Apply animation */
+
+}
+
+@keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Stay fixed at the top */
+    }
+  }
+  .popular-items-button-style {
+    border: 1px solid #06B906;
+    height: 75px;
+    width: 100%;
+    max-width: 200px;
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    background-color: transparent;
+}
+.popular-items-button-style:hover,
+.popular-items-button-style:focus,
+.popular-items-button-style:active{
+    background-color: transparent !important;
+    outline: none !important;
+   border: 1px solid #06B906 !important;
+    
+}

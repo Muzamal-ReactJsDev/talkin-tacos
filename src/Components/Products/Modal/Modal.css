@@ -1,0 +1,91 @@
+.modal-fullscreen .modal-content{
+  background-color: black !important;
+  color: white !important;
+}
+.Modal-Images {
+  width: 100%;
+  /* max-width: 200px; */
+  height: 400px;
+  object-fit: cover;
+}
+.modal-header .btn-close {
+  background-color: white !important;
+  color: black !important;
+}
+.quantity-div{
+  display: flex;
+  align-items: start;
+  justify-content: left !important;
+}
+.Modal-Button-Cart {
+  background-color: #06b906 !important;
+  border: none;
+  height: 50px;
+}
+.modal-close-icons-main {
+  color: white;
+  font-size: 28px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.modal-sides-images {
+  width: 100%;
+  max-width: 100px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.modal-sides-col-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-sides-map-row {
+  color: white;
+  background-color: rgb(35, 36, 35);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  width: 50%;
+  /* height: 100px; */
+}
+.modal-sides-icon {
+  color: #06b906;
+  font-size: 20px;
+}
+.modal-sides-prices {
+  display: flex;
+  align-items: center;
+}
+.Modal-cart-button-div {
+  /* position: absolute;
+    right: 30px;
+    bottom: 50%; */
+    display: flex;
+    flex-direction: column;
+  position: absolute;
+  right: 5%;
+  bottom: -20%;
+}
+
+.Modal-Button-Cart:hover,
+.Modal-Button-Cart:focus,
+.Modal-Button-Cart:active {
+  background-color: #06b906 !important;
+  outline: none !important;
+  /* border: 1px solid #06b906 !important; */
+}
+.toasts{
+  bottom: -11px;
+  right: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 3s;
+}

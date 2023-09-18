@@ -1,0 +1,60 @@
+/* .Scroll-images-container{
+    position: relative;
+} */
+.main-div-slider-images {
+  position: relative;
+}
+.images-slider1 {
+  width: 100%;
+  background-color: rgb(50, 50, 50);
+  border-radius: 10px;
+  max-width: 500px;
+  height: 400px;
+}
+.images-slider2 {
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  left: 24px;
+  top: 24px;
+}
+.image-slider-main-col-2 {
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.5s forwards; /* Apply animation */
+}
+
+.food-truck-main-div{
+  position: relative;
+}
+.food-truck-heading::before {
+  content: "";
+  display: block;
+  width: 67px;
+  height: 3px;
+  background: white;
+  left: 2px;
+  top: -13px;
+  position: absolute;
+}
+.image-slider-main-col-2 {
+}
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Stay fixed at the top */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .image-slider-main-col-2 {
+    margin-top: 70px;
+  }
+}
