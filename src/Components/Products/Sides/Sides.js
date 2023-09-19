@@ -35,7 +35,7 @@ const Sides = () => {
     <div id="sidesSection" className="mt-4">
       <Container className="Products-Container">
         <Row className="Products-Row-1">
-        <h2>Sides</h2>
+        <h2>Sides 1</h2>
           {!isLoading && !isLoading2 ? (
             <>
               {data[2]?.products?.map((dataofSides, id) => (
