@@ -19,15 +19,11 @@ const Products = () => {
     "Join Brickell Rewards to get free items when you order here →";
   return (
     <>
-      {/* <div>
-        <Navbar />
-       <ProductHeader/>
-      </div>
       <br />
       <br />
-      <br /> */}
+      <br />
       <div className="mt-3">
-        <BelowNav Menudata={Menudata} />
+        <BelowNav  Menudata={Menudata} />
       </div>
 
       <br />

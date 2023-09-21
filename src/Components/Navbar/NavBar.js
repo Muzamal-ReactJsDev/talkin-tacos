@@ -207,6 +207,7 @@
 // yahan hum na add to cart ma link add kiya ha......!!!!!!!!
 import { useState } from "react";
 import "./Navbar.css";
+import { FaRegUserCircle } from "react-icons/fa";
 import logo from "../Images/Talkin Logo.webp";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import SideBar from "./SideBar";
@@ -214,10 +215,12 @@ import { RxCross2 } from "react-icons/rx";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Cart from "../Cart/Cart";
+import SignupForm from "../Auth/SignUp/SignUp";
 export default function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [iscartebarOpen, setIsCartbarOpen] = useState(false);
+  const [IsRegistrationOpen, setIsRegistrationOpen] = useState(false);
 
   const location = useLocation();
   const count = useSelector((state) => state.app.cart);
@@ -287,7 +290,6 @@ export default function Navbar() {
                     className={
                       location.pathname === "/OurStory"
                         ? // location.pathname === "/locations"
-
                           "active"
                         : ""
                     }
@@ -296,20 +298,31 @@ export default function Navbar() {
                   </li>
                 </ul>
               </div>
-              {/* <div className="navbar-search">
-                <button className="navbar-search-button">Order Now</button>
-              </div> */}
               <div className="navbar-search">
                 {/* Conditionally render the button text and path */}
                 {isMenuPage ? (
-                  <Button
-                    className="navbar-search-button w-100"
-                    onClick={() => {
-                      setIsCartbarOpen(true);
-                    }}
-                  >
-                    Cart Items: {count.length}
-                  </Button>
+                  <div className="Login-in-details">
+                    <Link
+                      onClick={() => {
+                        setIsRegistrationOpen(true);
+                      }}
+                      className="me-3 login-log"
+                    >
+                      <FaRegUserCircle
+                        className="me-2"
+                        style={{ fontSize: "20px" }}
+                      />{" "}
+                      Login
+                    </Link>
+                    <Button
+                      className="navbar-search-button w-100"
+                      onClick={() => {
+                        setIsCartbarOpen(true);
+                      }}
+                    >
+                      Cart Items: {count.length}
+                    </Button>
+                  </div>
                 ) : (
                   <Button
                     className="navbar-search-button w-100"
@@ -343,6 +356,17 @@ export default function Navbar() {
                 <RxCross2 style={{ color: "white" }} />
               </button>
               <Cart />
+            </div>
+            <div className={IsRegistrationOpen ? "sidebar open" : "sidebar"}>
+              <button
+                className="close-sidebar"
+                onClick={() => {
+                  setIsRegistrationOpen(false);
+                }}
+              >
+                <RxCross2 style={{ color: "white" }} />
+              </button>
+              <SignupForm  />
             </div>
           </Col>
         </Row>

@@ -313,16 +313,11 @@ const SideBar = () => {
   const { data, isLoading, isError, isFetching, isSuccess } =
     useGetAllBranchesLocationQuery();
   console.log("data of Branches Location", data);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const closeSidebar = () => {
-    setSidebarOpen(false);
-  };
   let navigate = useNavigate();
   const routeChange = () => {
     let path = `/Products`;
     navigate(path);
   };
-
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -362,7 +357,8 @@ const SideBar = () => {
   return (
     <div>
       <Container
-        className={`SideBar-main-Container ${sidebarOpen ? "open" : "closed"}`}
+        // className={`SideBar-main-Container ${sidebarOpen ? "open" : "closed"}`}
+        className="SideBar-main-Container"
         onClick={routeChange}
         style={{ lineHeight: "45px" }}
       >
@@ -378,7 +374,7 @@ const SideBar = () => {
             {data?.branches?.map((dataBranchesLocation, id) => (
               <>
                 <Row className="p-2" key={id}>
-                  <Col onClick={closeSidebar}>
+                  <Col>
                     <div className="sidebar-button-div">
                       <h5>{dataBranchesLocation.name}</h5>
                       <Button className="SideBar-button-1">Order</Button>

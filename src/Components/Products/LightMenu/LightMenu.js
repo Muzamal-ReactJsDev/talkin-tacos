@@ -35,7 +35,7 @@ const LightMenu = () => {
     <div className="mt-4" id="lightMenuSection">
       <Container className="Products-Container">
         <Row className="Products-Row-1">
-          <h2>Light Menu 1</h2>
+          <h2>Light Menu</h2>
           {!isLoading && !isLoading2 ? (
             <>
               {data[3]?.products?.map((dataofLightMenu, id) => (

@@ -35,7 +35,8 @@ const LogInForm = () => {
       .then((response) => {
         console.log(response.data.token);
         alert("Log in Successfully");
-        navigate("/navbar");
+        navigate("/");
+      
       })
       .catch((error) => {
         console.log(error);
