@@ -125,7 +125,7 @@ import { Link } from "react-router-dom";
 const CardGrid = () => {
   const { data, isLoading, isError, isFetching, isSuccess } =
     useGetAllBranchesLocationQuery();
-  console.log("data of Card-Branches Location", data);
+  // console.log("data of Card-Branches Location", data); time update honay ki waja sy ya hamain bar bar console ma data show krwa rha tha....
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -137,6 +137,19 @@ const CardGrid = () => {
       clearInterval(interval);
     };
   }, []);
+
+  const formatTimeToUSATimeZone = (timeString) => {
+    const timeParts = timeString.split(":").map(Number);
+    const hours = timeParts[0];
+    const minutes = timeParts[1];
+    const time = new Date();
+    time.setHours(hours, minutes);
+    return time.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true, // Use 12-hour time format
+    });
+  };
 
   const isLocationOpen = (openingTime, closingTime) => {
     const currentHour = currentTime.getHours();
@@ -155,7 +168,16 @@ const CardGrid = () => {
         (currentHour === closingHour && currentMinute <= closingMinute)
       ) {
         // Current time is before closing time
-        return true; // Location is open
+        return `Open until ${formatTimeToUSATimeZone(closingTime)}`;
+      }
+    } else {
+      // Calculate the time difference in minutes
+      const timeDifferenceMinutes =
+        (openingHour - currentHour) * 60 + (openingMinute - currentMinute);
+
+      if (timeDifferenceMinutes <= 10) {
+        // Location is opening in less than or equal to 10 minutes
+        return `Opening in ${timeDifferenceMinutes} minutes`;
       }
     }
 
@@ -206,9 +228,7 @@ const CardGrid = () => {
                                 data?.restaurant_schedule_time[0].opening_time,
                                 data?.restaurant_schedule_time[0].closing_time
                               )
-                                ? "Open until " +
-                                  data?.restaurant_schedule_time[0].closing_time
-                                : "Closed"}
+                              }
                             </div>
                             <div
                               className="cardbranches-hours"

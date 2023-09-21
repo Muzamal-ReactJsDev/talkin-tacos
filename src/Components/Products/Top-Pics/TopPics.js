@@ -11,7 +11,7 @@ const TopPics = () => {
           <Col sm={4} className="TopPics-col-1">
             <div className="TopPics-image-1">
               <div className="TopPics-main-div-1">
-                <p>#3 Popular Items</p>
+                <p>#1 Popular Items</p>
                 <h4>Party Taco Platter</h4>
                 <div>
                   <text>$ 125.00</text>
@@ -25,7 +25,7 @@ const TopPics = () => {
           <Col sm={4} className="TopPics-col-1">
             <div className="TopPics-image-2">
               <div className="TopPics-main-div-1">
-                <p>#3 Popular Items</p>
+                <p>#2 Popular Items</p>
                 <h4>Party Taco Platter</h4>
                 <div>
                   <text>$ 15.99</text>
