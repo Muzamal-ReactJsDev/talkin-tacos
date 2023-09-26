@@ -90,8 +90,12 @@ import { MdLocationPin } from "react-icons/md";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useGetAllBranchesLocationQuery } from "../Service/Service";
+import PaymentInfoCard from "../Pament/Payment";
+import { addItemToCart } from "../Service/UserSlice";
+import { useDispatch } from "react-redux";
 
 const SideBar = () => {
+  const dispatch = useDispatch();
   const { data, isLoading, isError, isFetching, isSuccess } =
     useGetAllBranchesLocationQuery();
   let navigate = useNavigate();
@@ -157,6 +161,20 @@ const SideBar = () => {
     return false; // Location is closed
   };
 
+  const [selectedLocationAddress, setSelectedLocationAddress] = useState("");
+
+  // const handleLocationClick = (items) => {
+  //   setSelectedLocationAddress(items);
+  //   console.log("Muzamal", items);
+  //   // You can also perform any other actions you need when a location is clicked.
+  // };
+  // const handleLocationClick = (items) => {
+   
+  //   dispatch(addItemToCart(items));
+  //  console.log("Rao Muzamal",items)
+  // };
+  
+
   return (
     <div>
       <Container
@@ -174,7 +192,13 @@ const SideBar = () => {
           <>
             {data?.branches?.map((dataBranchesLocation, id) => (
               <>
-                <Row className="p-2" key={id}>
+                <Row
+                  className="p-2"
+                  key={id}
+                  // onClick={() =>
+                  //   handleLocationClick(dataBranchesLocation.address)
+                  // }
+                >
                   <Col>
                     <div className="sidebar-button-div">
                       <h5>{dataBranchesLocation.name}</h5>

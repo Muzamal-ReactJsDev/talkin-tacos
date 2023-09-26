@@ -9,7 +9,7 @@ import api from "../BaseApi";
 import InputMask from "react-input-mask";
 import { RxCross2 } from "react-icons/rx";
 import LogInForm from "../Login/Login";
-const SignupForm = ({setIsRegistrationOpen}) => {
+const SignupForm = ({ setIsRegistrationOpen }) => {
   const navigate = useNavigate();
   const [IsLogInOpen, setIsLogInOpen] = useState(false);
   const initialValues = {
@@ -219,10 +219,14 @@ const SignupForm = ({setIsRegistrationOpen}) => {
                   </Button>
                   <p className="text-center mt-3">
                     Already have an account ?{" "}
-                    <Link className="anchorforgot" onClick={() => {
-                  setIsLogInOpen(true);
-              
-                }}>Login</Link>
+                    <Link
+                      className="anchorforgot"
+                      onClick={() => {
+                        setIsLogInOpen(true);
+                      }}
+                    >
+                      Login
+                    </Link>
                   </p>
                 </Form>
               )}
@@ -230,16 +234,16 @@ const SignupForm = ({setIsRegistrationOpen}) => {
           </Card.Body>
         </Card>
         <div className={IsLogInOpen ? "sidebar open" : "sidebar"}>
-              <button
-                className="close-sidebar"
-                onClick={() => {
-                  setIsLogInOpen(false);
-                }}
-              >
-                <RxCross2 style={{ color: "white" }} />
-              </button>
-              <LogInForm />
-            </div>
+          <button
+            className="close-sidebar-Login"
+            onClick={() => {
+              setIsLogInOpen(false);
+            }}
+          >
+            <RxCross2 style={{ color: "white" }} />
+          </button>
+          <LogInForm />
+        </div>
       </Container>
     </>
   );

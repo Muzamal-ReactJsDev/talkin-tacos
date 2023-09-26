@@ -1,12 +1,13 @@
 .SignupContainer {
   padding-top: 40px;
-  background: rgb(250, 250, 250);
+  /* background: rgb(250, 250, 250); */
+  background-color: black !important;
   height: 100%;
 }
 .form-control {
   border: none !important;
   /* background-color: gray !important; */
-  background-color: rgb(250, 250, 250) !important;
+  background-color: rgb(13, 13, 13);
   padding: 12px !important;
 }
 .form-control:focus {
@@ -17,11 +18,13 @@
 .Signup-card {
   line-height: 45px !important;
   width: 100%;
-  max-width: 800px !important;
+  /* max-width: 800px !important; */
   margin: 0 auto;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* border-radius: 10px; */
+  background-color: rgb(13, 13, 13);
+  color: white !important;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 .SignupBtn {
   padding: 12px;
@@ -47,4 +50,13 @@
   background-color: rgb(13, 13, 13);
   box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease-in-out;
+}
+.close-sidebar-Login {
+  position: absolute;
+  top: 0px;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

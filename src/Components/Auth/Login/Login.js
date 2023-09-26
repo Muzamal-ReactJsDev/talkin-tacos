@@ -11,12 +11,10 @@ import {
   FormControl,
   Container,
 } from "react-bootstrap";
-import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./Login.css";
-import Imglogo from "../../Images/Talkin 2.png";
-import { Link } from "react-router-dom";
+import Imglogo from "../../Images/Talkin Logo.webp";
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email address")
@@ -36,7 +34,6 @@ const LogInForm = () => {
         console.log(response.data.token);
         alert("Log in Successfully");
         navigate("/");
-      
       })
       .catch((error) => {
         console.log(error);
@@ -103,16 +100,6 @@ const LogInForm = () => {
                             maxLength={8}
                             autoComplete="off"
                           />
-                          <Button
-                            className="buttonEye"
-                            onClick={togglepasswordVisibility}
-                          >
-                            {showpassword ? (
-                              <FiEye className="buttonEyeI" />
-                            ) : (
-                              <FiEyeOff className="buttonEyeI" />
-                            )}
-                          </Button>
                         </InputGroup>
                         <ErrorMessage
                           name="password"
@@ -137,66 +124,15 @@ const LogInForm = () => {
                       className="error-message"
                     />
                   </Form.Group>
-
-                  <Row className="mb-4">
-                    <Col
-                      className="p-0 d-flex align-items-center justify-content-start"
-                      xs={6}
-                    >
-                      <Form.Group controlId="rememberMe">
-                        <Field
-                          type="checkbox"
-                          name="rememberMe"
-                          id="rememberMe"
-                          className="form-check-input-style-log"
-                        />
-                        {/* <Form.Label
-                         
-                        >
-                          Remember me
-                        </Form.Label> */}
-                        <label
-                          htmlFor="rememberMe"
-                          className="form-check-label mb-0"
-                          style={{ fontSize: "12px" }}
-                        >
-                          Remember me
-                        </label>
-                      </Form.Group>
-                    </Col>
-                    <Col
-                      xs={6}
-                      className="p-0 d-flex align-items-center justify-content-end"
-                    >
-                      <Link
-                        to="/Forgotpassword"
-                        className="anchorforgot1"
-                        style={{ fontSize: "12px", textDecoration: "none" }}
-                      >
-                        Forgot password?
-                      </Link>
-                    </Col>
-                  </Row>
                   <Button
                     style={{ background: "rgb(221, 153, 51)" }}
-                    className="LoginSubmitt"
+                    className="LoginSubmitt mt-3"
                     type="submit"
                     block
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Logging in..." : "Login"}
                   </Button>
-                  <p className="text-center mt-3">
-                    Create an account ?{" "}
-                    <Link className="anchorforgot" to="/SignUp">
-                      {" "}
-                      SignUp
-                    </Link>
-                    <div>or </div>
-                    <Link className="anchorforgot" to="/navbar">
-                      Continue as a Guest
-                    </Link>
-                  </p>
                 </Form>
               )}
             </Formik>

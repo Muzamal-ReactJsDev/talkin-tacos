@@ -1,0 +1,15 @@
+.Payment-button{
+    border: none;
+    height: 50px;
+    width: 100%;
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    background-color: #06b906;
+}
+.Payment-button:hover,
+.Payment-button:focus,
+.Payment-button:active {
+  background-color: #06b906 !important;
+}

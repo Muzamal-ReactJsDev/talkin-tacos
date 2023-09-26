@@ -546,7 +546,6 @@ const callingBoth=()=>{
                     }}
                     className="Modal-Button-Cart my-3"
                   >
-                    
                     {/* ya b  use kr skty hain ya oper wala b...!!
                           Add Items . $ {handleAmount} */}
                     Add Items to cart{addToCartHandler}
