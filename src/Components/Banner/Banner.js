@@ -12,8 +12,8 @@ const Banner = () => {
         <br />
         <br />
         <br />
-        <br />
-        <Container>
+
+        <Container className="mt-2">
           <Row>
             <Col>
               <h1 className="banner-heading-main">
