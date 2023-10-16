@@ -90,7 +90,7 @@ import { MdLocationPin } from "react-icons/md";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useGetAllBranchesLocationQuery } from "../Service/Service";
-import PaymentInfoCard from "../Pament/Payment";
+import PaymentInfoCard from "../Payment/Payment";
 import { addItemToCart } from "../Service/UserSlice";
 import { useDispatch } from "react-redux";
 

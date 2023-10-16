@@ -1,0 +1,70 @@
+.Payment-button {
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: white;
+  background-color: #06b906;
+}
+.input-field-payment {
+  width: 100%;
+}
+.Payment-button:hover,
+.Payment-button:focus,
+.Payment-button:active {
+  background-color: #06b906 !important;
+}
+/* styles.css (or your preferred CSS file) */
+
+.payment-form-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.payment-form-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.payment-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-form-container label {
+  margin-bottom: 5px;
+}
+
+.payment-form-container input[type="text"],
+.payment-form-container input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.payment-form-container button[type="submit"] {
+  padding: 10px;
+  background-color: #06b906;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.payment-form-container button[type="submit"]:hover {
+  background-color: #06b906;
+}
+.listfont {
+  font-weight: bold;
+  color: red;
+}

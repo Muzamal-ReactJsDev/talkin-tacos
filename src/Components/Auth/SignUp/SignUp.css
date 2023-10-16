@@ -7,7 +7,7 @@
 .form-control {
   border: none !important;
   /* background-color: gray !important; */
-  background-color: rgb(13, 13, 13);
+  
   padding: 12px !important;
 }
 .form-control:focus {

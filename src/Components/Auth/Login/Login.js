@@ -23,15 +23,25 @@ const validationSchema = Yup.object().shape({
     .min(3, "password must be at least 3 characters")
     .required("password is required"),
 });
+function useAuthToken() {
+  const getToken = () => localStorage.getItem("token");
+  const setToken = (token) => localStorage.setItem("token", token);
+  const removeToken = () => localStorage.removeItem("token");
+
+  return { getToken, setToken, removeToken };
+}
 const LogInForm = () => {
   const navigate = useNavigate();
+  const { getToken, setToken } = useAuthToken(); // Use the custom hook
+
   const [showpassword, setShowpassword] = useState(false);
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     // agar direct api use karian gay to axios.post likhian gay agar api ko alag define karian gay to to wahan jo name likha ha wohii name likhian gay....
     await api
       .post("/auth/login", values)
       .then((response) => {
-        console.log(response.data.token);
+        console.log("Here is Token in Login", response.data.token);
+        setToken(response.data.token, "Here is the Token");
         alert("Log in Successfully");
         navigate("/");
       })
