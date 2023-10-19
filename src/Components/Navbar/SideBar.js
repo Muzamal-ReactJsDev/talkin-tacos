@@ -97,7 +97,6 @@ import Ordering from "../Products/Ordering/Ordering";
 
 const SideBar = () => {
   const dispatch = useDispatch();
-  const [showLocation, setShowLocation] = useState(false);
   const { data, isLoading, isError, isFetching, isSuccess } =
     useGetAllBranchesLocationQuery();
   let navigate = useNavigate();
@@ -165,12 +164,11 @@ const SideBar = () => {
 
   const [selectedLocationAddress, setSelectedLocationAddress] = useState("");
 
-  const handleLocationClick = (items) => {
-    setSelectedLocationAddress(items);
-    console.log("Muzamal", items);
+  const handleLocationClick = (items) =>{
+    window.localStorage.setItem('location', items);
+  // setSelectedLocationAddress(items);
     // You can also perform any other actions you need when a location is clicked.
   };
-
   return (
     <div>
       <Container
@@ -230,9 +228,6 @@ const SideBar = () => {
           <h6>Loading....... Please Wait</h6>
         )}
       </Container>
-      {showLocation && (
-        <Ordering selectedLocationAddress={selectedLocationAddress} />
-      )}
     </div>
   );
 };
