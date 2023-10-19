@@ -14,7 +14,8 @@ import Ordering from "./Ordering/Ordering";
 import TopPics from "./Top-Pics/TopPics";
 import ProductsBar from "./ProductsBars/ProductsBar";
 
-const Products = () => {
+const Products = ({selectedLocationAddress}) => {
+  console.log("first",selectedLocationAddress)
   const Menudata =
     "Join Brickell Rewards to get free items when you order here →";
   return (
@@ -25,12 +26,11 @@ const Products = () => {
       <div className="mt-3">
         <BelowNav  Menudata={Menudata} />
       </div>
-
       <br />
       <br />
       <br />
       <div>
-        <Ordering />
+        <Ordering selectedLocationAddress={selectedLocationAddress} />
       </div>
       <br />
       <br />

@@ -4,7 +4,9 @@ import OrderImg from "../../Images/Ordering";
 import "./Ordering.css";
 import { Link } from "react-router-dom";
 import { PiHandWaving, PiCarLight } from "react-icons/pi";
-const Ordering = () => {
+const Ordering = ({selectedLocationAddress}) => {
+
+  console.log("recieving",selectedLocationAddress)
   return (
     <Container className="Ordering-main-container">
       <Row>
@@ -14,6 +16,7 @@ const Ordering = () => {
               Ordering from <div className="Ordering-Brickell">Brickell</div>
             </h1>
             <p>97 SW 8th St, Miami, FL 33130, USA</p>
+            <div>{selectedLocationAddress}</div>
             <br />
             <ul className="Ordering-main-ul">
               <li>

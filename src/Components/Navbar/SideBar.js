@@ -93,9 +93,11 @@ import { useGetAllBranchesLocationQuery } from "../Service/Service";
 import PaymentInfoCard from "../Payment/Payment";
 import { addItemToCart } from "../Service/UserSlice";
 import { useDispatch } from "react-redux";
+import Ordering from "../Products/Ordering/Ordering";
 
 const SideBar = () => {
   const dispatch = useDispatch();
+  const [showLocation, setShowLocation] = useState(false);
   const { data, isLoading, isError, isFetching, isSuccess } =
     useGetAllBranchesLocationQuery();
   let navigate = useNavigate();
@@ -105,15 +107,15 @@ const SideBar = () => {
   };
   const [currentTime, setCurrentTime] = useState(new Date());
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 2000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentTime(new Date());
+  //   }, 2000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
 
   const formatTimeToUSATimeZone = (timeString) => {
     const timeParts = timeString.split(":").map(Number);
@@ -163,17 +165,11 @@ const SideBar = () => {
 
   const [selectedLocationAddress, setSelectedLocationAddress] = useState("");
 
-  // const handleLocationClick = (items) => {
-  //   setSelectedLocationAddress(items);
-  //   console.log("Muzamal", items);
-  //   // You can also perform any other actions you need when a location is clicked.
-  // };
-  // const handleLocationClick = (items) => {
-   
-  //   dispatch(addItemToCart(items));
-  //  console.log("Rao Muzamal",items)
-  // };
-  
+  const handleLocationClick = (items) => {
+    setSelectedLocationAddress(items);
+    console.log("Muzamal", items);
+    // You can also perform any other actions you need when a location is clicked.
+  };
 
   return (
     <div>
@@ -195,9 +191,9 @@ const SideBar = () => {
                 <Row
                   className="p-2"
                   key={id}
-                  // onClick={() =>
-                  //   handleLocationClick(dataBranchesLocation.address)
-                  // }
+                  onClick={() =>
+                    handleLocationClick(dataBranchesLocation.address)
+                  }
                 >
                   <Col>
                     <div className="sidebar-button-div">
@@ -234,6 +230,9 @@ const SideBar = () => {
           <h6>Loading....... Please Wait</h6>
         )}
       </Container>
+      {showLocation && (
+        <Ordering selectedLocationAddress={selectedLocationAddress} />
+      )}
     </div>
   );
 };

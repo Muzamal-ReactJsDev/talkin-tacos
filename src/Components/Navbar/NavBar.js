@@ -268,8 +268,9 @@ export default function Navbar() {
                   </li>
                   <li
                     className={
-                      location.pathname === "/Products" ||
-                      location.pathname === "/locations"
+                      location.pathname === "/Products" 
+                      // ||
+                      // location.pathname === "/locations"
                         ? "active"
                         : ""
                     }
