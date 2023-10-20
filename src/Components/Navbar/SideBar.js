@@ -106,15 +106,15 @@ const SideBar = () => {
   };
   const [currentTime, setCurrentTime] = useState(new Date());
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentTime(new Date());
-  //   }, 2000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 2000);
 
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, []);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const formatTimeToUSATimeZone = (timeString) => {
     const timeParts = timeString.split(":").map(Number);

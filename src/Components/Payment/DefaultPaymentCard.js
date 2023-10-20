@@ -63,12 +63,12 @@ function DefaultPaymentCard() {
       <br />
       <div className="payment-form-container">
         <h1>Default Payment Card</h1>
-
         <form onSubmit={handleSubmit}>
           <div>
             <label>Payment Id</label>
             <input
               type="text"
+              autoComplete="off"
               name="payment_id"
               className="input-field input-field-payment"
               value={cardInfo.payment_id}

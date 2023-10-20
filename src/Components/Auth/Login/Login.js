@@ -43,7 +43,7 @@ const LogInForm = () => {
         console.log("Here is Token in Login", response.data.token);
         setToken(response.data.token, "Here is the Token");
         alert("Log in Successfully");
-        navigate("/");
+        navigate("/Payment");
       })
       .catch((error) => {
         console.log(error);

@@ -29,7 +29,7 @@ const PaymentCardList = () => {
       .then((response) => {
         setPaymentCards(response.data);
         console.log(response.data, "Payment Card List");
-        alert("Payment Card List created successfully");
+        // alert("Payment Card List created successfully");
         setLoading(false); // Set loading to false when the data is loaded
       })
       .catch((error) => {
@@ -59,6 +59,9 @@ const PaymentCardList = () => {
                       {/* Render the card details as needed */}
                       <span className="listfont">Id: </span> {card.id}&nbsp;
                       &nbsp; &nbsp;
+                      <span className="listfont">User Id : </span>
+                      {card.user_id}
+                      &nbsp; &nbsp; &nbsp;
                       <span className="listfont">Payment-Id: </span>
                       {card.payment_id}&nbsp; &nbsp; &nbsp;
                       <span className="listfont">Payment Type: </span>

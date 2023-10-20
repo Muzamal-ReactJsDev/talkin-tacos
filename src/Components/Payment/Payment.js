@@ -56,7 +56,7 @@ function PaymentMethodForm() {
         // Payment method created successfully
         console.log("Payment method created successfully");
         alert("Payment method created successfully");
-        navigate("PaymentCardList");
+        navigate("/PaymentCardList");
       } else {
         // Handle error
         console.error("Error creating payment method");
