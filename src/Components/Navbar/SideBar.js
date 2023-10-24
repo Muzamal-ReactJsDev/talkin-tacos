@@ -164,9 +164,9 @@ const SideBar = () => {
 
   const [selectedLocationAddress, setSelectedLocationAddress] = useState("");
 
-  const handleLocationClick = (items) =>{
-    window.localStorage.setItem('location', items);
-  // setSelectedLocationAddress(items);
+  const handleLocationClick = (items) => {
+    window.localStorage.setItem("location", items);
+    // setSelectedLocationAddress(items);
     // You can also perform any other actions you need when a location is clicked.
   };
   return (
