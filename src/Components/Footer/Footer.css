@@ -8,6 +8,9 @@
    max-width: 80px;
  
 }
+.social-links{
+    color: white;
+}
 .footer-col-2{
     display: flex;
     align-items: center;
@@ -43,7 +46,10 @@
     align-items: center;
     color: #06B906;
 }
-
+.footer-home-pages{
+    color: white;
+    text-decoration: none;
+}
 @media screen and (max-width:672px) {
     .footer-button{
         width: 100%;

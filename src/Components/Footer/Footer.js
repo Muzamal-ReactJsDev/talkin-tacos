@@ -5,6 +5,7 @@ import logo from "../Images/Talkin Logo.webp";
 import { LiaFacebook, LiaInstagram } from "react-icons/lia";
 import { RxCross2 } from "react-icons/rx";
 import SideBar from "../Navbar/SideBar";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -19,9 +20,14 @@ const Footer = () => {
               </div>
             </Col>
             <Col className="footer-col-2" sm={6}>
-              <Button className="footer-button" onClick={() => {
-                      setIsSidebarOpen(true);
-                    }}>Order Now</Button>
+              <Button
+                className="footer-button"
+                onClick={() => {
+                  setIsSidebarOpen(true);
+                }}
+              >
+                Order Now
+              </Button>
             </Col>
           </Row>
           <hr className="footer-hr-row" />
@@ -29,16 +35,21 @@ const Footer = () => {
             <Col className="footer-col-3">
               <text>Social</text>
               <div className="mt-2">
+                <Link className="social-links"  to="https://www.facebook.com/eattacoboutit/">
                 <LiaFacebook className="footer-icon" />
-                <LiaInstagram className="footer-icon" />
+                </Link>
+                
+                <Link className="social-links" to="https://www.instagram.com/_talkintacos/">
+                  <LiaInstagram className="footer-icon" />
+                </Link>
               </div>
             </Col>
             <Col className="footer-col-4">
               <div className="mt-2">
-                <text>Pages</text>
+                <Link className="footer-home-pages">Pages</Link>
 
                 <div>
-                  <text>Home</text>{" "}
+                  <Link to="/" className="footer-home-pages">Home</Link>{" "}
                 </div>
               </div>
             </Col>
@@ -55,16 +66,16 @@ const Footer = () => {
             </Col>
           </Row>
           <div className={isSidebarOpen ? "sidebar open" : "sidebar"}>
-              <button
-                className="close-sidebar"
-                onClick={() => {
-                  setIsSidebarOpen(false);
-                }}
-              >
-                <RxCross2 style={{ color: "white" }} />
-              </button>
-              <SideBar />
-            </div>
+            <button
+              className="close-sidebar"
+              onClick={() => {
+                setIsSidebarOpen(false);
+              }}
+            >
+              <RxCross2 style={{ color: "white" }} />
+            </button>
+            <SideBar />
+          </div>
         </Container>
       </div>
     </>
