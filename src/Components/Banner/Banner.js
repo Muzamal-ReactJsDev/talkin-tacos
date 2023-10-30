@@ -4,7 +4,8 @@ import "./Banner.css";
 import { Link } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import SideBar from "../Navbar/SideBar";
-const Banner = () => {
+
+const Banner = ({ closeSideBar }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div className="banner-main-div">

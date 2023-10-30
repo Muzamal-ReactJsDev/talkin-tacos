@@ -63,10 +63,12 @@ function PaymentMethodForm() {
         // Handle error
         console.error("Error creating payment method");
         alert("Error creating payment method");
+        setIsLoaing(false);
       }
     } catch (error) {
       console.error("Error:", error);
       alert("Error:", error);
+      setIsLoaing(false);
     }
   };
 

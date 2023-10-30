@@ -95,6 +95,9 @@ const Cart = ({ closeCart }) => {
   const handleAddItem = (item) => {
     dispatch(addItemToCart(item));
   };
+  
+  localStorage.setItem("Order Amount",totalPrice);
+
   const routeChange = () => {
     let path = `/Payment`;
     navigate(path);

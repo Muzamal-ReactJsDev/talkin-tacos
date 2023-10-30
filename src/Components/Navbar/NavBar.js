@@ -227,7 +227,6 @@ export default function Navbar() {
   const handlecloseRegistration = () => {
     setIsRegistrationOpen(false);
   };
-
   const location = useLocation();
   const count = useSelector((state) => state.app.cart);
   // Determine if the current route is the menu page

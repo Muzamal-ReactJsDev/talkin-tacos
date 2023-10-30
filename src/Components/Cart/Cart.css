@@ -60,7 +60,7 @@
   padding: 10px;
 }
 .cart-checkout-div {
-  height: 30vh;
+  /* height: 30vh; */
   position: absolute;
   background-color: rgb(26, 26, 26);
   bottom: 0px;

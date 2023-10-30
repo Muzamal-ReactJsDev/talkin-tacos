@@ -194,7 +194,7 @@
 // export default PlaceOrder;
 
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "./PlaceOrder.css";
 function PlaceOrder() {
   const [formData, setFormData] = useState({
@@ -208,6 +208,7 @@ function PlaceOrder() {
     payment_method: "",
     payment_id: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -252,6 +253,7 @@ function PlaceOrder() {
       console.error("Token not available. Please authenticate.");
       return;
     }
+    setIsLoading(true);
     try {
       const response = await fetch(
         "https://cafescale.com/api/v1/customer/order/place",
@@ -274,10 +276,12 @@ function PlaceOrder() {
         // Handle error
         console.error("Error creating payment method");
         alert("Error creating payment method");
+        setIsLoading(false);
       }
     } catch (error) {
       console.error("Error:", error);
       alert("Error:", error);
+      setIsLoading(false);
     }
   };
 
@@ -298,6 +302,7 @@ function PlaceOrder() {
             name="order_amount"
             value={formData.order_amount}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -307,6 +312,7 @@ function PlaceOrder() {
             name="delivery_address_id"
             value={formData.delivery_address_id}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -315,6 +321,7 @@ function PlaceOrder() {
             name="order_type"
             value={formData.order_type}
             onChange={handleChange}
+            required
           >
             <option value="">Select Order Type</option>
             <option value="type1">Pick up</option>
@@ -328,6 +335,7 @@ function PlaceOrder() {
             name="branch_id"
             value={formData.branch_id}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -337,6 +345,7 @@ function PlaceOrder() {
             name="delivery_time"
             value={formData.delivery_time}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -346,6 +355,7 @@ function PlaceOrder() {
             name="delivery_date"
             value={formData.delivery_date}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -355,6 +365,7 @@ function PlaceOrder() {
             name="distance"
             value={formData.distance}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -363,6 +374,7 @@ function PlaceOrder() {
             name="payment_method"
             value={formData.payment_method}
             onChange={handleChange}
+            required
           >
             <option value="">Select Payment Method</option>
             <option value="credit_card">Stripe</option>
@@ -376,10 +388,13 @@ function PlaceOrder() {
             name="payment_id"
             value={formData.payment_id}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
-          <button type="submit">Place Order</button>
+          <button disabled={isLoading} type="submit">
+            {isLoading ? "Order is Placing" : "Place Order"}
+          </button>
         </div>
       </form>
     </div>

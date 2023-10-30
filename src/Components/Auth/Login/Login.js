@@ -30,7 +30,7 @@ function useAuthToken() {
 
   return { getToken, setToken, removeToken };
 }
-const LogInForm = () => {
+const LogInForm = ({ closeLogin }) => {
   const navigate = useNavigate();
   const { getToken, setToken } = useAuthToken(); // Use the custom hook
 
@@ -41,9 +41,11 @@ const LogInForm = () => {
       .post("/auth/login", values)
       .then((response) => {
         console.log("Here is Token in Login", response.data.token);
-        setToken(response.data.token, "Here is the Token");
+        // setToken(response.data.token);
+        localStorage.setItem("token",response.data.token)
         alert("Log in Successfully");
         // navigate("/Payment");
+        closeLogin();
       })
       .catch((error) => {
         console.log(error);

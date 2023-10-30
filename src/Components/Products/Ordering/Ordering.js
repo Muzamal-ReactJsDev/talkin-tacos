@@ -5,8 +5,8 @@ import "./Ordering.css";
 import { Link } from "react-router-dom";
 import { PiHandWaving, PiCarLight } from "react-icons/pi";
 const Ordering = () => {
-const location = localStorage.getItem('location');
-  console.log("recieve location",location);
+const location = localStorage.getItem('Location');
+  console.log("recieve Location",location);
   return (
     <Container className="Ordering-main-container">
       <Row>

@@ -35,7 +35,9 @@ const SignupForm = ({ closeRegistration }) => {
       .nullable(),
     password: Yup.string().required("Password is required"),
   });
-
+  const handleCloseLogin = () => {
+    setIsLogInOpen(false);
+  };
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     await api
       .post("/auth/registration", values)
@@ -44,6 +46,7 @@ const SignupForm = ({ closeRegistration }) => {
         alert("You are Registered Successfully❤😎");
         // navigate("/");
         closeRegistration();
+        setIsLogInOpen(true);
       })
       .catch((error) => {
         console.log(error);
@@ -244,7 +247,7 @@ const SignupForm = ({ closeRegistration }) => {
           >
             <RxCross2 style={{ color: "white" }} />
           </button>
-          <LogInForm />
+          <LogInForm closeLogin={handleCloseLogin} />
         </div>
       </Container>
     </>

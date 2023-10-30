@@ -99,6 +99,7 @@ const SideBar = () => {
   const dispatch = useDispatch();
   const { data, isLoading, isError, isFetching, isSuccess } =
     useGetAllBranchesLocationQuery();
+  // console.log(data,"details of Location")
   let navigate = useNavigate();
   const routeChange = () => {
     let path = `/Products`;
@@ -165,7 +166,9 @@ const SideBar = () => {
   const [selectedLocationAddress, setSelectedLocationAddress] = useState("");
 
   const handleLocationClick = (items) => {
-    window.localStorage.setItem("location", items);
+    window.localStorage.setItem("Location", items.address);
+    window.localStorage.setItem("Location Id", items.id);
+    console.log(items,"itemmmmsssssss")
     // setSelectedLocationAddress(items);
     // You can also perform any other actions you need when a location is clicked.
   };
@@ -189,9 +192,9 @@ const SideBar = () => {
                 <Row
                   className="p-2"
                   key={id}
-                  onClick={() =>
-                    handleLocationClick(dataBranchesLocation.address)
-                  }
+                  onClick={() => {
+                    handleLocationClick(dataBranchesLocation);
+                  }}
                 >
                   <Col>
                     <div className="sidebar-button-div">
