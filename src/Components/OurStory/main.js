@@ -21,10 +21,6 @@ const main = () => {
       <br />
       <br />
       <ThanksBanner />
-
-      <div>
-        <Footer />
-      </div>
     </>
   );
 };

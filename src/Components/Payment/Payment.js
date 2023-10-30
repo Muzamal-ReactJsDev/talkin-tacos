@@ -3,6 +3,7 @@ import "./Payment.css";
 import { useNavigate } from "react-router-dom";
 function PaymentMethodForm() {
   const navigate = useNavigate();
+  const [isLoading, setIsLoaing] = useState(false);
   const [cardInfo, setCardInfo] = useState({
     card_no: "",
     exp_month: "",
@@ -38,6 +39,7 @@ function PaymentMethodForm() {
       console.error("Token not available. Please authenticate.");
       return;
     }
+    setIsLoaing(true);
     try {
       const response = await fetch(
         "https://cafescale.com/api/v1/customer/paymentmethod/createPaymentMethod",
@@ -133,8 +135,8 @@ function PaymentMethodForm() {
               required
             />
           </div>
-          <button type="submit" className="submit-button">
-            Create Payment Method
+          <button type="submit" className="submit-button" disabled={isLoading}>
+            {isLoading ? "Submitting...." : " Create Payment Method"}
           </button>
         </form>
       </div>

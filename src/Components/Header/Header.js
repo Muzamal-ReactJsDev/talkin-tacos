@@ -81,14 +81,6 @@ const Header = () => {
       <div>
         <OrderCard/>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div>
-        <Footer/>
-      </div>
 
     </>
   );

@@ -9,7 +9,7 @@ import api from "../BaseApi";
 import InputMask from "react-input-mask";
 import { RxCross2 } from "react-icons/rx";
 import LogInForm from "../Login/Login";
-const SignupForm = ({ setIsRegistrationOpen }) => {
+const SignupForm = ({ closeRegistration }) => {
   const navigate = useNavigate();
   const [IsLogInOpen, setIsLogInOpen] = useState(false);
   const initialValues = {
@@ -43,6 +43,7 @@ const SignupForm = ({ setIsRegistrationOpen }) => {
         console.log(response.config.data);
         alert("You are Registered Successfully❤😎");
         // navigate("/");
+        closeRegistration();
       })
       .catch((error) => {
         console.log(error);
@@ -238,6 +239,7 @@ const SignupForm = ({ setIsRegistrationOpen }) => {
             className="close-sidebar-Login"
             onClick={() => {
               setIsLogInOpen(false);
+              closeRegistration();
             }}
           >
             <RxCross2 style={{ color: "white" }} />

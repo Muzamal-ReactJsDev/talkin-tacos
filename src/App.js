@@ -6,6 +6,8 @@ import Navbar from "./Components/Navbar/NavBar";
 import Main from "./Components/OurStory/main";
 import Payment from "./Components/Payment/Payment.js";
 import PaymentCardList from "./Components/Payment/PaymentCardList";
+import PlaceOrder from "./Components/Payment/PlaceOrder";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
           <Route path="/OurStory" element={<Main />} />
           <Route path="/Payment" element={<Payment />} />
           <Route path="/PaymentCardList" element={<PaymentCardList />} />
+          <Route path="/PlaceOrder" element={<PlaceOrder />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

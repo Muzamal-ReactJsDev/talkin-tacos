@@ -43,7 +43,7 @@ const LogInForm = () => {
         console.log("Here is Token in Login", response.data.token);
         setToken(response.data.token, "Here is the Token");
         alert("Log in Successfully");
-        navigate("/Payment");
+        // navigate("/Payment");
       })
       .catch((error) => {
         console.log(error);
@@ -107,7 +107,6 @@ const LogInForm = () => {
                             name="password"
                             as={FormControl}
                             placeholder="Enter your password"
-                            maxLength={8}
                             autoComplete="off"
                           />
                         </InputGroup>

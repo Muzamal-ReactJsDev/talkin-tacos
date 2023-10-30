@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Payment.css";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function DefaultPaymentCard() {
+  const navigate = useNavigate();
   const [cardInfo, setCardInfo] = useState({
     payment_id: "",
   });
+  const [isLoading, setIsLoading] = useState(false); // New state variable
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,13 +19,15 @@ function DefaultPaymentCard() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the form from submitting the traditional way.
+    e.preventDefault();
     const token = localStorage.getItem("token");
     console.log("Token in DefaultPaymentCard:", token);
     if (!token) {
       console.error("Token not available. Please authenticate.");
       return;
     }
+
+    setIsLoading(true); // Set loading state
 
     try {
       const response = await fetch(
@@ -30,7 +36,6 @@ function DefaultPaymentCard() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            // Use the saved token for authorization
             Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(cardInfo),
@@ -38,20 +43,21 @@ function DefaultPaymentCard() {
       );
 
       if (response.ok) {
-        // Payment method created successfully
         console.log(
           "Default Payment Card method created successfully",
           response
         );
         alert("Default Payment Card method created successfully");
+        navigate("/PlaceOrder");
       } else {
-        // Handle error
         console.error("Error creating Default payment method");
         alert("Error creating Default payment method");
       }
     } catch (error) {
       console.error("Error:", error);
       alert("Error:", error);
+    } finally {
+      setIsLoading(false); // Reset loading state
     }
   };
 
@@ -76,8 +82,8 @@ function DefaultPaymentCard() {
               required
             />
           </div>
-          <button type="submit" className="submit-button">
-            Set Default Card
+          <button type="submit" className="submit-button" disabled={isLoading}>
+            {isLoading ? "Submitting...." : "Set Default Card"}
           </button>
         </form>
       </div>

@@ -221,6 +221,12 @@ export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [iscartebarOpen, setIsCartbarOpen] = useState(false);
   const [IsRegistrationOpen, setIsRegistrationOpen] = useState(false);
+  const handleclosecart = () => {
+    setIsCartbarOpen(false);
+  };
+  const handlecloseRegistration = () => {
+    setIsRegistrationOpen(false);
+  };
 
   const location = useLocation();
   const count = useSelector((state) => state.app.cart);
@@ -268,10 +274,10 @@ export default function Navbar() {
                   </li>
                   <li
                     className={
-                      location.pathname === "/Products" 
-                      // ||
-                      // location.pathname === "/locations"
-                        ? "active"
+                      location.pathname === "/Products"
+                        ? // ||
+                          // location.pathname === "/locations"
+                          "active"
                         : ""
                     }
                     onClick={() => {
@@ -356,7 +362,7 @@ export default function Navbar() {
               >
                 <RxCross2 style={{ color: "white" }} />
               </button>
-              <Cart />
+              <Cart closeCart={handleclosecart} />
             </div>
             <div className={IsRegistrationOpen ? "sidebar open" : "sidebar"}>
               <button
@@ -367,7 +373,7 @@ export default function Navbar() {
               >
                 <RxCross2 style={{ color: "white" }} />
               </button>
-              <SignupForm  />
+              <SignupForm closeRegistration={handlecloseRegistration} />
             </div>
           </Col>
         </Row>

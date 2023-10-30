@@ -396,19 +396,19 @@ function Example({ show, handleOpen, handleClose, modalData, modalImage }) {
     return modalData.price * quantity;
   };
 
-  const addToCartHandler = () => {
-    dispatch(
-      addItemToCart({
-        modalData,
-        quantity,
-      })
-    );
-    // handleClose();
-  };
-const callingBoth=()=>{
-  handleAmount()
-  addToCartHandler()
-}
+  // const addToCartHandler = () => {
+  //   dispatch(
+  //     addItemToCart({
+  //       modalData,
+  //       quantity,
+  //     })
+  //   );
+  //   // handleClose();
+  // };
+// const callingBoth=()=>{
+//   handleAmount()
+//   addToCartHandler()
+// }
 
   
   // this is for the Api which i show in the Modal....////
@@ -548,7 +548,8 @@ const callingBoth=()=>{
                   >
                     {/* ya b  use kr skty hain ya oper wala b...!!
                           Add Items . $ {handleAmount} */}
-                    Add Items to cart{addToCartHandler}
+                    Add Items to cart
+                    {/* Add Items to cart{addToCartHandler} */}
               
                   </Button>
                 </div>

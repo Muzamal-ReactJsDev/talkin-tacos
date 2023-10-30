@@ -82,8 +82,8 @@ import "./Cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { addItemToCart, removeFromCart } from "../Service/UserSlice";
-import { useNavigate } from "react-router-dom";
-const Cart = () => {
+import { Link, useNavigate } from "react-router-dom";
+const Cart = ({ closeCart }) => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
   const { cart, totalPrice } = useSelector((state) => state.app);
@@ -123,7 +123,12 @@ const Cart = () => {
               <Row>
                 <Col>
                   <div className="cart-prices-items">
-                    <text>Edit</text>
+                    <Link
+                      style={{ textDecoration: "none", color: "white" }}
+                      onClick={closeCart}
+                    >
+                      Edit
+                    </Link>
                     {cartData.quantity > 0 && (
                       <text>
                         ${totalItemPrice.toFixed(2)}&nbsp;&nbsp;&nbsp;&nbsp;
@@ -151,7 +156,7 @@ const Cart = () => {
           </p>
         </div>
         <div className="w-100">
-          <Button onClick={routeChange}className="cart-checkout-button my-3">
+          <Button onClick={routeChange} className="cart-checkout-button my-3">
             Checkout $: {totalPrice.toFixed(2)}
           </Button>
         </div>
