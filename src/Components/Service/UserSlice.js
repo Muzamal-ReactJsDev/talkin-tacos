@@ -1,28 +1,13 @@
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// export const UserSlice = createSlice({
-//   name: "UserSlice",
-//   initialState: {
-//     users: [],
-//     cart: [], // Initialize an empty cart array
-//     loading: false,
-//     error: null,
-//   },
-
-//   reducers: {
-//     addItemToCart: (state, action) => {
-//       state.cart.push(action.payload);
-//     },
-
-//   },
-// });
-// export const { addItemToCart, removeFromCart, clearCart } = UserSlice.actions;
-
-// export default UserSlice.reducer;
-
-// src/reducers/UserSlice.js
-
 // import { createSlice } from "@reduxjs/toolkit";
 
+// const TotalAmt = (items) => {
+//   const sum = items.reduce(add, 0); // with initial value to avoid when the array is empty
+//   function add(accumulator, a) {
+//     const d = a?.price * a?.quantity;
+//     return accumulator + d;
+//   }
+//   return sum;
+// };
 // const initialState = {
 //   cart: [],
 //   totalPrice: 0,
@@ -80,9 +65,35 @@
 
 // export default userSlice.reducer;
 
-// yahan hum total quantity or total price ka logic lagain gay.....!!!!
+// ////////////
 
 import { createSlice } from "@reduxjs/toolkit";
+
+const updateLocalStorage = (items, totalCount, totalPrice) => {
+  if (items !== undefined) {
+    localStorage.setItem("cartItems", JSON.stringify(items));
+  }
+  if (!isNaN(totalCount)) {
+    localStorage.setItem("totalCount", totalCount);
+  }
+  if (!isNaN(totalPrice)) {
+    localStorage.setItem("totalPrice", totalPrice);
+  }
+};
+
+let storedCartItems = localStorage.getItem("cartItems");
+let storedTotalCount = parseInt(localStorage.getItem("totalCount")) || 0;
+let storedTotalPrice = parseFloat(localStorage.getItem("totalPrice")) || 0;
+
+if (storedCartItems) {
+  try {
+    storedCartItems = JSON.parse(storedCartItems);
+  } catch (e) {
+    // Handle parsing error, or set a default value
+    storedCartItems = [];
+  }
+}
+
 const TotalAmt = (items) => {
   const sum = items.reduce(add, 0); // with initial value to avoid when the array is empty
   function add(accumulator, a) {
@@ -92,8 +103,9 @@ const TotalAmt = (items) => {
   return sum;
 };
 const initialState = {
-  cart: [],
-  totalPrice: 0,
+  totalCount: storedTotalCount, // Initialize with totalCount from local storage
+  cart: storedCartItems, // Initialize with items from local storage
+  totalPrice: storedTotalPrice, // Initialize with totalPrice from local storage
 };
 
 const userSlice = createSlice({
@@ -118,6 +130,7 @@ const userSlice = createSlice({
         state.cart.push(newItem);
         state.totalPrice += newItem.price;
       }
+      updateLocalStorage(state.cart, state.totalCount, state.totalPrice);
     },
     removeFromCart: (state, action) => {
       const itemToRemove = state.cart.find(
@@ -136,6 +149,7 @@ const userSlice = createSlice({
           state.totalPrice -= itemToRemove.itemTotalPrice; // Subtract the total price of the removed item
         }
       }
+      updateLocalStorage(state.cart, state.totalCount, state.totalPrice);
     },
     clearCart: (state) => {
       state.cart = [];
