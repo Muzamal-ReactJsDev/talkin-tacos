@@ -11,19 +11,6 @@ function PaymentMethodForm() {
     cvc: "",
     card_holder_name: "",
   });
-
-  // const [token, setToken] = useState(null);
-
-  // useEffect(() => {
-
-  //   // Retrieve the token from local storage on component mount
-  //   const storedToken = localStorage.getItem('authToken');
-  //   console.log(storedToken)
-  //   // if (token) {
-  //   //   setToken(token);
-  //   // }
-  // }, []);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCardInfo({

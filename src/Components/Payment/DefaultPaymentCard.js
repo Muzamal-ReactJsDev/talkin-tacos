@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Payment.css";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
-
+import api from "../Auth/BaseApi";
 function DefaultPaymentCard() {
   const navigate = useNavigate();
   const [cardInfo, setCardInfo] = useState({
@@ -48,7 +48,7 @@ function DefaultPaymentCard() {
           response
         );
         alert("Default Payment Card method created successfully");
-        navigate("/PlaceOrder");
+        navigate("/AddAddress");
       } else {
         console.error("Error creating Default payment method");
         alert("Error creating Default payment method");
