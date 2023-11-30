@@ -104,7 +104,7 @@ const TotalAmt = (items) => {
 };
 const initialState = {
   totalCount: storedTotalCount, // Initialize with totalCount from local storage
-  cart: storedCartItems, // Initialize with items from local storage
+  cart: storedCartItems || [], // Initialize with items from local storage or an empty array
   totalPrice: storedTotalPrice, // Initialize with totalPrice from local storage
 };
 

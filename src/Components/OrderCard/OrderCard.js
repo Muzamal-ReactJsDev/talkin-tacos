@@ -21,7 +21,7 @@ const CardGrid = () => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [currentTime]);
 
   const isLocationOpen = (openingTime, closingTime) => {
     const currentHour = currentTime.getHours();

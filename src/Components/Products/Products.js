@@ -8,7 +8,7 @@ import Desert from "./Desert/Desert";
 import HomeMade from "./HomeMade/HomeMade";
 import Beverages from "./Beverages/Bevarages";
 import Navbar from "../Navbar/NavBar";
-import ProductHeader from "./ProductHeader/ProductHeader"
+import ProductHeader from "./ProductHeader/ProductHeader";
 import BelowNav from "../BelowNav/BelowNav";
 import Ordering from "./Ordering/Ordering";
 import TopPics from "./Top-Pics/TopPics";
@@ -23,7 +23,7 @@ const Products = () => {
       <br />
       <br />
       <div className="mt-3">
-        <BelowNav  Menudata={Menudata} />
+        <BelowNav Menudata={Menudata} />
       </div>
       <br />
       <br />

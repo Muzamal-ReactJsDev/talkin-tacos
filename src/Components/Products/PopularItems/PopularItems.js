@@ -54,7 +54,9 @@ const PopularItems = () => {
                         <div className="p-3 Products-Col-1-div-1">
                           {" "}
                           <h5>{dataPopularItems.name}</h5>
-                          <p className="Products-descr-para mb-0">{dataPopularItems.description}</p>
+                          <p className="Products-descr-para mb-0">
+                            {dataPopularItems.description}
+                          </p>
                           <div className="Product-Price">
                             <div>
                               <BsPlusCircle style={{ color: "06B906" }} /> ${" "}

@@ -216,6 +216,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Cart from "../Cart/Cart";
 import SignupForm from "../Auth/SignUp/SignUp";
+import HumburgerMenu from "./HumbergerMenu";
 export default function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -305,41 +306,45 @@ export default function Navbar() {
                 </ul>
               </div>
               <div className="navbar-search">
-                {/* Conditionally render the button text and path */}
-                {isMenuPage ? (
-                  <div className="Login-in-details">
-                    <Link
-                      onClick={() => {
-                        setIsRegistrationOpen(true);
-                      }}
-                      className="me-3 login-log"
-                    >
-                      <FaRegUserCircle
-                        className="me-2"
-                        style={{ fontSize: "20px" }}
-                      />{" "}
-                      Login
-                    </Link>
-                    <Button
-                      className="navbar-search-button w-100"
-                      onClick={() => {
-                        setIsCartbarOpen(true);
-                      }}
-                    >
-                      Cart Items: {count.length}
-                    </Button>
-                  </div>
-                ) : (
-                  <Button
-                    className="navbar-search-button w-100"
-                    onClick={() => {
-                      setIsSidebarOpen(true);
-                    }}
-                  >
-                    Order Now
-                  </Button>
-                )}
-              </div>
+  {/* Conditionally render the button text and path */}
+  {isMenuPage ? (
+    <div className="Login-in-details">
+      <Link
+        onClick={() => {
+          setIsRegistrationOpen(true);
+        }}
+        className="me-3 login-log"
+      >
+        <FaRegUserCircle
+          className="me-2"
+          style={{ fontSize: "20px" }}
+        />{" "}
+        Login
+      </Link>
+      <Button
+        className="navbar-search-button w-100"
+        onClick={() => {
+          setIsCartbarOpen(true);
+        }}
+      >
+        Cart Items: {count.length}
+      </Button>
+    </div>
+  ) : (
+    <div>
+      <Button
+        className="navbar-search-button w-100"
+        onClick={() => {
+          setIsSidebarOpen(true);
+        }}
+      >
+        Order Now
+      </Button>
+      <HumburgerMenu /> {/* Include the HumburgerMenu component here as well */}
+    </div>
+  )}
+</div>
+
             </nav>
             <div className={isSidebarOpen ? "sidebar open" : "sidebar"}>
               <button
