@@ -1,0 +1,89 @@
+.css-1aquho2-MuiTabs-indicator {
+    position: absolute !important;
+    height: 52px !important;
+    bottom: 0 !important;
+    width: 100%; 
+    -webkit-transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+    border: 1px solid black !important;
+    background-color:rgb(244, 247, 252) !important;
+    border-radius: 5px;
+    
+  }
+  .css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked{
+    color: rgb(221, 153, 51) !important;
+  }
+  
+  .cart-label {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: black !important;
+    z-index: 1;
+    /* background-color: skyblue !important; */
+    margin: 4px !important;
+  }
+  .cart-discoutn1 {
+    font-weight: bold;
+    font-size: 16px !important;
+    padding-left: 0px !important;
+    color: black;
+  }
+  
+  .cart-fee-estimated-name {
+    float: left;
+  }
+  .cart-fee-estimated-price {
+    float: right;
+  }
+  
+  /* This is for the radio button */
+  .demo-form-control {
+    font-weight: bold !important;
+    font-size: 18px !important;
+    color: black !important;
+  }
+  .cart-tabpanel {
+    padding-top: 12px;
+    color: black !important;
+  }
+  .css-19kzrtu {
+    padding-top: 20px !important;
+    padding: 0px !important;
+  }
+  .css-1wcaknn {
+    padding: 0px !important;
+  }
+  .cart-items-price {
+    font-weight: bold !important;
+    font-size: 16px !important;
+    color: black !important;
+  }
+  .cart-items-price-name {
+    float: left;
+  }
+  .cart-items-price-price {
+    float: right;
+  }
+  #outlined-basic {
+    padding: 0px !important;
+  }
+  .cart-delivery-fee {
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    padding-top: 10px;
+  }
+  .delivery-fee-left {
+    /* font-weight: bolder; */
+    /* font-size: 40px; */
+    float: left;
+  }
+  .delivery-fee-right {
+    float: right;
+  }
+  .cart-hr {
+    border-style: dotted none none none;
+    border-width: 5px;
+    width: 100%;
+  }
+  

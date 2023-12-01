@@ -168,7 +168,9 @@ const SideBar = () => {
   const handleLocationClick = (items) => {
     window.localStorage.setItem("branch_address", items.address);
     window.localStorage.setItem("branch_id", items.id);
-    console.log(items,"Data to be send");
+    window.localStorage.setItem("latitude_1", items.latitude);
+    window.localStorage.setItem("longitude_1", items.longitude);
+    console.log(items, "Data to be send");
     // setSelectedLocationAddress(items);
     // You can also perform any other actions you need when a location is clicked.
   };

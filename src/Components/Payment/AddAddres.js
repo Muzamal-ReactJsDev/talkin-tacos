@@ -144,6 +144,20 @@ function AddAddress() {
     contact_person_number: "",
     address: "",
   });
+  const [editable, setEditable] = useState(true);
+  useEffect(() => {
+    const fullName = localStorage.getItem("f_name");
+    const phoneNumber = localStorage.getItem("Phone");
+    if (fullName && phoneNumber) {
+      setCardInfo({
+        ...cardInfo,
+        contact_person_name: fullName,
+        contact_person_number: phoneNumber,
+      });
+      setEditable(true);
+    }
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCardInfo({
@@ -194,6 +208,10 @@ function AddAddress() {
 
         if (addressResponse.ok) {
           console.log("Address Added successfully", addressResponse);
+          localStorage.setItem("deliverytype", addressData.address_type);
+          localStorage.setItem("latitude_2", addressData.latitude);
+          localStorage.setItem("longitude_2", addressData.longitude
+          );
           alert("Address Added successfully");
           navigate("/ShowAddAddress");
         } else {
@@ -276,3 +294,4 @@ function AddAddress() {
 }
 
 export default AddAddress;
+

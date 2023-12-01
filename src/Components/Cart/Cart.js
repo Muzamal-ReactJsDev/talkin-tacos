@@ -83,6 +83,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { addItemToCart, removeFromCart } from "../Service/UserSlice";
 import { Link, useNavigate } from "react-router-dom";
+import DiscountandCharges from "./DiscountandCharges"
+import PaymentCardList from "../Payment/PaymentCardList";
 const Cart = ({ closeCart }) => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -95,8 +97,8 @@ const Cart = ({ closeCart }) => {
   const handleAddItem = (item) => {
     dispatch(addItemToCart(item));
   };
-  
-  localStorage.setItem("Order_Amount",totalPrice);
+
+  localStorage.setItem("Order_Amount", totalPrice);
 
   const routeChange = () => {
     let path = `/Payment`;
@@ -150,20 +152,39 @@ const Cart = ({ closeCart }) => {
           );
         })}
       </Container>
-      <div className="cart-checkout-div">
-        <div>
-          <p style={{ color: "white", fontWeight: "bold" }}>
-            You'll earn{" "}
-            <span style={{ color: "#06b906" }}> {totalPrice.toFixed(2)}</span>{" "}
-            points with this order
-          </p>
-        </div>
-        <div className="w-100">
-          <Button onClick={routeChange} className="cart-checkout-button my-3">
-            Checkout $: {totalPrice.toFixed(2)}
-          </Button>
-        </div>
-      </div>
+
+<Container>
+
+  <DiscountandCharges/>
+</Container>
+
+
+      <Container fluid>
+        <Row className="p-0">
+          <Col className="p-0">
+            <div className="cart-checkout-div">
+              <div>
+                <p style={{ color: "white", fontWeight: "bold" }}>
+                  You'll earn{" "}
+                  <span style={{ color: "#06b906" }}>
+                    {" "}
+                    {totalPrice.toFixed(2)}
+                  </span>{" "}
+                  points with this order
+                </p>
+              </div>
+              <div className="w-100">
+                <Button
+                  onClick={routeChange}
+                  className="cart-checkout-button my-3"
+                >
+                  Checkout $: {totalPrice.toFixed(2)}
+                </Button>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

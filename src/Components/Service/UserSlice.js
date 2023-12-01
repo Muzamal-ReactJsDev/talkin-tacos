@@ -161,3 +161,4 @@ const userSlice = createSlice({
 export const { addItemToCart, removeFromCart, clearCart } = userSlice.actions;
 
 export default userSlice.reducer;
+export const cartDetails = (state) => state.app;

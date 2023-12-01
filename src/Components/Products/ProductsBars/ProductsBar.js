@@ -5,7 +5,7 @@ import "./ProductsBar.css";
 function BasicExample() {
   return (
     <div className="productsBar-main-div">
-      <Container>
+      <Container className="hhhh">
         <Navbar expand="lg" className="mmnb">
           <Navbar.Brand className="" style={{ color: "white" }}>
             Search

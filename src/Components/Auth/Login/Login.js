@@ -32,6 +32,7 @@ function useAuthToken() {
 }
 const LogInForm = ({ closeLogin }) => {
   const navigate = useNavigate();
+  const [showLogin, setShowLogIn] = useState(true);
   const { getToken, setToken } = useAuthToken(); // Use the custom hook
 
   const [showpassword, setShowpassword] = useState(false);
@@ -42,7 +43,12 @@ const LogInForm = ({ closeLogin }) => {
       .then((response) => {
         console.log("Here is Token in Login", response.data.token);
         // setToken(response.data.token);
-        localStorage.setItem("token",response.data.token)
+
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("f_name", response.data.user.f_name);
+        localStorage.setItem("Point", response.data.user.point);
+        localStorage.setItem("Phone", response.data.user.phone);
+        localStorage.setItem("Email", response.data.user.email);
         alert("Log in Successfully");
         // navigate("/Payment");
         closeLogin();
@@ -153,5 +159,4 @@ const LogInForm = ({ closeLogin }) => {
     </>
   );
 };
-
 export default LogInForm;

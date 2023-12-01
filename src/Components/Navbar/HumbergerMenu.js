@@ -14,10 +14,10 @@ import { FaHome, FaMapMarkedAlt, FaStore, FaWallet } from "react-icons/fa";
 import { SiIterm2 } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
 import { IoIosLogOut } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const HumburgerMenu = () => {
   const [show, setShow] = useState(false);
-
+  const navigate = useNavigate();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(!show); // Toggle the value of 'show'
   const ProfileName = localStorage.getItem("f_name");
@@ -26,6 +26,7 @@ const HumburgerMenu = () => {
   function clearLocalStorage() {
     localStorage.clear();
     alert("You have been Logout");
+    navigate("/");
   }
   return (
     <>

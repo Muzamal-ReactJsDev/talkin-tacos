@@ -2,11 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import DefaultPaymentCard from "./DefaultPaymentCard";
+import { useNavigate } from "react-router-dom";
 
 const PaymentCardList = () => {
   const [paymentCards, setPaymentCards] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -26,6 +27,9 @@ const PaymentCardList = () => {
       )
       .then((response) => {
         setPaymentCards(response.data);
+        console.log(response,"response of list")
+        localStorage.setItem("payment_id", response.data[0].payment_id);
+        navigate("/AddAddress")
         setLoading(false);
       })
       .catch((error) => {
@@ -40,11 +44,11 @@ const PaymentCardList = () => {
         <Row>
           <Col>
             <div className="">
+              {/* <br />
               <br />
               <br />
               <br />
-              <br />
-              <br />
+              <br /> */}
               <h1>Payment Cards</h1>
               {paymentCards.length === 0 ? (
                 <p>List is empty</p>
@@ -72,9 +76,9 @@ const PaymentCardList = () => {
           </Col>
         </Row>
       </Container>
-      <div>
+      {/* <div>
         <DefaultPaymentCard />
-      </div>
+      </div> */}
     </>
   );
 };
