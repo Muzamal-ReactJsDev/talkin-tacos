@@ -409,7 +409,7 @@ function PlaceOrder() {
     order_amount: 0,
     delivery_address_id: "",
     order_type: "",
-    branch_id: "", //set it default 10
+    branch_id: "", //set it default 10 if necessary like in Kabshah
     delivery_time: "",
     delivery_date: "",
     distance: 0,
