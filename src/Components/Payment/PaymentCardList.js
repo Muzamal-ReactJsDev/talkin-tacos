@@ -27,9 +27,9 @@ const PaymentCardList = () => {
       )
       .then((response) => {
         setPaymentCards(response.data);
-        console.log(response,"response of list")
+        console.log(response, "response of list");
         localStorage.setItem("payment_id", response.data[0].payment_id);
-        navigate("/AddAddress")
+        // navigate("/AddAddress");
         setLoading(false);
       })
       .catch((error) => {

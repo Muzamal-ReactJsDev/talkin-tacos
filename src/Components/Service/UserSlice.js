@@ -76,7 +76,9 @@ const updateLocalStorage = (items, totalCount, totalPrice) => {
   if (!isNaN(totalCount)) {
     localStorage.setItem("totalCount", totalCount);
   }
-  if (!isNaN(totalPrice)) {
+  if (!totalPrice || isNaN(totalPrice)) {
+    localStorage.setItem("totalPrice", 0);
+  } else {
     localStorage.setItem("totalPrice", totalPrice);
   }
 };
@@ -94,18 +96,16 @@ if (storedCartItems) {
   }
 }
 
-const TotalAmt = (items) => {
-  const sum = items.reduce(add, 0); // with initial value to avoid when the array is empty
-  function add(accumulator, a) {
-    const d = a?.price * a?.quantity;
-    return accumulator + d;
-  }
-  return sum;
-};
+// const TotalAmt = (items) => {
+//   return items.reduce((accumulator, item) => {
+//     const itemTotal = item?.price * item?.quantity;
+//     return accumulator + (itemTotal || 0);
+//   }, 0);
+// };
 const initialState = {
   totalCount: storedTotalCount, // Initialize with totalCount from local storage
   cart: storedCartItems || [], // Initialize with items from local storage or an empty array
-  totalPrice: storedTotalPrice, // Initialize with totalPrice from local storage
+  totalPrice: storedTotalPrice || 0, // Initialize with totalPrice from local storage
 };
 
 const userSlice = createSlice({
@@ -132,6 +132,26 @@ const userSlice = createSlice({
       }
       updateLocalStorage(state.cart, state.totalCount, state.totalPrice);
     },
+    // removeFromCart: (state, action) => {
+    //   const itemToRemove = state.cart.find(
+    //     (item) => item.id === action.payload.id
+    //   );
+
+    //   if (itemToRemove) {
+    //     if (itemToRemove.quantity > 1) {
+    //       itemToRemove.quantity -= 1;
+    //       itemToRemove.itemTotalPrice -= itemToRemove.price; // Decrease the price for the specific item
+    //       state.totalPrice -= itemToRemove.price; // Update the total price
+    //     } else {
+    //       state.cart = state.cart.filter(
+    //         (item) => item.id !== action.payload.id
+    //       );
+    //       state.totalPrice -= itemToRemove.itemTotalPrice; // Subtract the total price of the removed item
+    //     }
+    //   }
+    //   updateLocalStorage(state.cart, state.totalCount, state.totalPrice);
+    // },
+
     removeFromCart: (state, action) => {
       const itemToRemove = state.cart.find(
         (item) => item.id === action.payload.id
@@ -147,13 +167,19 @@ const userSlice = createSlice({
             (item) => item.id !== action.payload.id
           );
           state.totalPrice -= itemToRemove.itemTotalPrice; // Subtract the total price of the removed item
+
+          if (state.cart.length === 0) {
+            state.totalPrice = 0; // Set totalPrice to zero if the cart is empty
+          }
         }
       }
-      updateLocalStorage(state.cart, state.totalCount, state.totalPrice);
+      updateLocalStorage(state.cart, state.totalCount, state.totalPrice); // Update localStorage
     },
+
     clearCart: (state) => {
       state.cart = [];
       state.totalPrice = 0;
+      // updateLocalStorage(state.cart, state.totalCount, state.totalPrice); // Update localStorage
     },
   },
 });

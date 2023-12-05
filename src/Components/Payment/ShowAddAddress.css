@@ -1,0 +1,55 @@
+.address-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.address-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.address-card:hover {
+  transform: translateY(-5px);
+}
+
+.address-details {
+  margin-bottom: 15px;
+}
+
+.address-label {
+  color: #555;
+  font-weight: bold;
+}
+
+.address-value {
+  color: #777;
+}
+
+@media screen and (max-width: 768px) {
+  .address-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .address-card {
+    width: calc(100% - 20px);
+  }
+}
+
+.placeOrderbtn {
+  background-color: #06b906 !important ;
+  border: none !important;
+}
+.placeOrder-button {
+  color: white !important;
+  margin-top: 40px;
+  text-decoration: none !important;
+}

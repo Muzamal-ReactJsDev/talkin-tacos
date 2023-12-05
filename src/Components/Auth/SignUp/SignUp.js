@@ -227,6 +227,7 @@ const SignupForm = ({ closeRegistration }) => {
                       className="anchorforgot"
                       onClick={() => {
                         setIsLogInOpen(true);
+                        closeRegistration();
                       }}
                     >
                       Login
@@ -244,6 +245,7 @@ const SignupForm = ({ closeRegistration }) => {
               setIsLogInOpen(false);
               closeRegistration();
             }}
+            
           >
             <RxCross2 style={{ color: "white" }} />
           </button>

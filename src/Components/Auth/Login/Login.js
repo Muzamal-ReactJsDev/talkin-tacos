@@ -50,7 +50,7 @@ const LogInForm = ({ closeLogin }) => {
         localStorage.setItem("Phone", response.data.user.phone);
         localStorage.setItem("Email", response.data.user.email);
         alert("Log in Successfully");
-        // navigate("/Payment");
+        navigate("/Products");
         closeLogin();
       })
       .catch((error) => {

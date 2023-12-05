@@ -24,6 +24,7 @@ function PaymentMethodForm() {
     e.preventDefault();
     if (!token) {
       console.error("Token not available. Please authenticate.");
+      alert("Please Login First");
       return;
     }
     setIsLoaing(true);
@@ -78,6 +79,7 @@ function PaymentMethodForm() {
               value={cardInfo.card_no}
               onChange={handleChange}
               required
+              maxLength={16}
             />
           </div>
           <div>
@@ -127,6 +129,9 @@ function PaymentMethodForm() {
           <button type="submit" className="submit-button" disabled={isLoading}>
             {isLoading ? "Submitting...." : " Create Payment Method"}
           </button>
+          {/* <button type="submit" className="submit-button">
+          Create Payment Method
+          </button> */}
         </form>
       </div>
     </>

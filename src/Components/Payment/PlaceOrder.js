@@ -447,12 +447,13 @@ function PlaceOrder() {
 
   // Retrieve total price from localStorage and set it to state
   useEffect(() => {
-    const TotalPrice = localStorage.getItem("totalPrice");
+    // const TotalPrice = localStorage.getItem("totalPrice");
+    const TotalPrice = localStorage.getItem("totalPriceAfterTax");
     if (TotalPrice) {
       setTotalPrice(parseFloat(TotalPrice));
       setFormData({ ...formData, order_amount: parseFloat(TotalPrice) });
     }
-
+  
     // Fetch and update latitude and longitude values here from localStorage if needed
   }, []); // Empty dependency array to run the effect only once
   const handleSubmit = async (e) => {

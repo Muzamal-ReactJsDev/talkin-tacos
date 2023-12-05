@@ -35,7 +35,7 @@ const Sides = () => {
     <div id="sidesSection" className="mt-4">
       <Container className="Products-Container">
         <Row className="Products-Row-1">
-        <h2>Sides 1</h2>
+          <h2>Sides</h2>
           {!isLoading && !isLoading2 ? (
             <>
               {data[2]?.products?.map((dataofSides, id) => (
@@ -51,7 +51,9 @@ const Sides = () => {
                         <div className="p-3 Products-Col-1-div-1">
                           {" "}
                           <h5>{dataofSides.name}</h5>
-                          <p className="Products-descr-para">{dataofSides.description}</p>
+                          <p className="Products-descr-para">
+                            {dataofSides.description}
+                          </p>
                           <div className="Product-Price">
                             <span>
                               <BsPlusCircle style={{ color: "06B906" }} /> ${" "}

@@ -2,16 +2,20 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./ShowAddAddress.css"; // Import your CSS file
+
 function ShowAddAddress() {
   const [addresses, setAddresses] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("token in show_Add_Addrss", token);
+    
     if (!token) {
       console.error("Token not available. Please authenticate.");
       return;
     }
+
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -23,7 +27,6 @@ function ShowAddAddress() {
           }
         );
         setAddresses(response.data);
-        console.log(response.data);
         localStorage.setItem("Delivery_Address_Id", response.data[0].id);
         setLoading(false);
       } catch (err) {
@@ -36,59 +39,48 @@ function ShowAddAddress() {
   }, []);
 
   return (
-    <>
-      <Container style={{ color: "white" }}>
-        <Row>
-          <Col>
-            <div className="">
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <h1>Add Address List</h1>
-              {addresses.length === 0 ? (
-                <p>List is empty</p>
-              ) : (
-                <>
-                  {loading ? <p>Loading...</p> : null}
-                  <ul>
-                    {addresses.map((addaddress) => (
-                      <li key={addaddress.id}>
-                        {/* Render the addaddress details as needed */}
-                        <span className="listfont">Id: </span> {addaddress.id}
-                        &nbsp;&nbsp;&nbsp;
-                        <span className="listfont">User Id : </span>{" "}
-                        {addaddress.user_id}&nbsp;&nbsp;&nbsp;
-                        <span className="listfont">Address: </span>{" "}
-                        {addaddress.address}&nbsp;&nbsp;&nbsp;
-                        <span className="listfont">Address Type: </span>{" "}
-                        {addaddress.address_type}&nbsp;&nbsp;&nbsp;
-                        <span className="listfont">Latitude : </span>{" "}
-                        {addaddress.latitude}
-                        &nbsp;&nbsp;&nbsp;
-                        <span className="listfont">Longitude :</span>{" "}
-                        {addaddress.longitude}
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
-            <div className="text-center">
-              <Button>
-                <Link
-                  to="/PlaceOrder"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  Place an Oder
-                </Link>
-              </Button>
+    <Container style={{marginTop:"100px"}}>
+      <h1 className="text-center mt-4" style={{color:"white"}}>Add Address List</h1>
+      <Row className="address-container">
+        {addresses.map((addaddress) => (
+          <Col key={addaddress.id} lg={4} md={6} xs={12}>
+            <div className="address-card">
+              <div className="address-details">
+                <span className="address-label">Id:</span>
+                <span className="address-value">{addaddress.id}</span>
+              </div>
+              <div className="address-details">
+                <span className="address-label">User Id:</span>
+                <span className="address-value">{addaddress.user_id}</span>
+              </div>
+              <div className="address-details">
+                <span className="address-label">Address:</span>
+                <span className="address-value">{addaddress.address}</span>
+              </div>
+              <div className="address-details">
+                <span className="address-label">Address Type:</span>
+                <span className="address-value">{addaddress.address_type}</span>
+              </div>
+              {/* <div className="address-details">
+                <span className="address-label">Latitude:</span>
+                <span className="address-value">{addaddress.latitude}</span>
+              </div>
+              <div className="address-details">
+                <span className="address-label">Longitude:</span>
+                <span className="address-value">{addaddress.longitude}</span>
+              </div> */}
             </div>
           </Col>
-        </Row>
-      </Container>
-    </>
+        ))}
+      </Row>
+      <div  className="text-center  " >
+        <Button className="placeOrderbtn">
+          <Link to="/PlaceOrder" className="placeOrder-button" >
+            Place an Order
+          </Link>
+        </Button>
+      </div>
+    </Container>
   );
 }
 

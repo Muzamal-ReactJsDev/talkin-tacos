@@ -95,6 +95,14 @@
 }
 
 .login-log {
+  /* align-items: center;
+  display: flex;
+  text-decoration: none;
+  color: white;
+  font-weight: bold; */
+
+  border: none;
+  background-color: black;
   align-items: center;
   display: flex;
   text-decoration: none;

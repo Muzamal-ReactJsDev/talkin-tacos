@@ -83,7 +83,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { addItemToCart, removeFromCart } from "../Service/UserSlice";
 import { Link, useNavigate } from "react-router-dom";
-import DiscountandCharges from "./DiscountandCharges"
+import DiscountandCharges from "./DiscountandCharges";
 import PaymentCardList from "../Payment/PaymentCardList";
 const Cart = ({ closeCart }) => {
   const dispatch = useDispatch();
@@ -98,7 +98,7 @@ const Cart = ({ closeCart }) => {
     dispatch(addItemToCart(item));
   };
 
-  localStorage.setItem("Order_Amount", totalPrice);
+  // localStorage.setItem("Order_Amount", totalPrice);
 
   const routeChange = () => {
     let path = `/Payment`;
@@ -153,13 +153,15 @@ const Cart = ({ closeCart }) => {
         })}
       </Container>
 
-<Container>
+      <Container>
+        <DiscountandCharges />
+      </Container>
 
-  <DiscountandCharges/>
-</Container>
+      <Button className="cart-checkout-button my-2" onClick={routeChange}>
+        Continue CheckOut
+      </Button>
 
-
-      <Container fluid>
+      {/* <Container fluid>
         <Row className="p-0">
           <Col className="p-0">
             <div className="cart-checkout-div">
@@ -184,7 +186,7 @@ const Cart = ({ closeCart }) => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </div>
   );
 };
