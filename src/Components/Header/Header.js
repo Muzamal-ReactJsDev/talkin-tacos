@@ -13,15 +13,16 @@ import OrderCard from "../OrderCard/OrderCard";
 import Footer from "../Footer/Footer";
 
 const Header = () => {
-  const BelowNavDetails="Join Talkin Tacos Rewards, win $500! Be entered in a drawing to win on 9/1"
+  const BelowNavDetails =
+    "Join Talkin Tacos Rewards, win $500! Be entered in a drawing to win on 9/1";
   return (
     <>
       <br />
       <br />
       <br />
-      <div className="mt-3">
+      {/* <div className="mt-3">
         <BelowNav BelowNavDetails={BelowNavDetails} />
-      </div>
+      </div> */}
       <div>
         <Banner />
       </div>
@@ -29,7 +30,6 @@ const Header = () => {
       <br />
       <br />
       <br />
-
       <div>
         <MostPopular />
       </div>
@@ -63,7 +63,7 @@ const Header = () => {
       <br />
       <br />
       <div>
-        <TopDishes/>
+        <TopDishes />
       </div>
       <br />
       <br />
@@ -71,7 +71,7 @@ const Header = () => {
       <br />
       <br />
       <div>
-        <Location/>
+        <Location />
       </div>
       <br />
       <br />
@@ -79,9 +79,8 @@ const Header = () => {
       <br />
       <br />
       <div>
-        <OrderCard/>
+        <OrderCard />
       </div>
-
     </>
   );
 };
