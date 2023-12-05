@@ -47,7 +47,7 @@ const HumburgerMenu = () => {
                       <h6>{ProfileName}</h6>
                     </div>
                     <div>{ProfileEmail}</div>
-                    <div>Point: {ProfilePoint}</div>
+                    {/* <div>Point: {ProfilePoint}</div> */}
                   </div>
                 </div>
                 <ul className="hamburger-menu-links">

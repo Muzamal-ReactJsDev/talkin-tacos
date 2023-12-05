@@ -17,7 +17,7 @@ const SignupForm = ({ closeRegistration }) => {
     l_name: "",
     email: "",
     phone: "",
-    restaurant_id: "",
+
     password: "",
   };
   const validationSchema = Yup.object().shape({
@@ -30,9 +30,7 @@ const SignupForm = ({ closeRegistration }) => {
         /^\(\d{3}\) \d{3}-\d{4}$/,
         "Invalid phone number. Use the format (123) 456-7890"
       ),
-    restaurant_id: Yup.string()
-      .required("Restaurant ID is required")
-      .nullable(),
+
     password: Yup.string().required("Password is required"),
   });
   const handleCloseLogin = () => {
@@ -168,29 +166,7 @@ const SignupForm = ({ closeRegistration }) => {
                       </div>
                     </Col>
                   </Row>
-                  <Row>
-                    <Col xs={12}>
-                      <div className="form-group">
-                        <label htmlFor="restaurant_id">Restaurant ID</label>
-                        <Field
-                          placeholder="Enter the Restaurant ID"
-                          type="number"
-                          name="restaurant_id"
-                          id="restaurant_id"
-                          className={`form-control ${
-                            errors.restaurant_id && touched.restaurant_id
-                              ? "is-invalid"
-                              : ""
-                          }`}
-                        />
-                        <ErrorMessage
-                          name="restaurant_id"
-                          component="div"
-                          className="invalid-feedback"
-                        />
-                      </div>
-                    </Col>
-                  </Row>
+
                   <Row>
                     <Col xs={12}>
                       <div className="form-group">

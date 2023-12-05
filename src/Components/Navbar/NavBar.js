@@ -491,14 +491,24 @@ export default function Navbar() {
                     <Link>Locations</Link>
                   </li>
                   <li
-                    className={
-                      location.pathname === "/OurStory"
-                        ? // location.pathname === "/locations"
-                          "active"
-                        : ""
-                    }
+                  // className={
+                  //   location.pathname === "/OurStory"
+                  //     ? // location.pathname === "/locations"
+                  //       "active"
+                  //     : ""
+                  // }
                   >
-                    <Link to="/OurStory">Our Story</Link>
+                    <Link to="/Order">Order</Link>
+                  </li>
+                  <li
+                  // className={
+                  //   // location.pathname === "/OurStory"
+                  //     ?  location.pathname === "/locations"
+                  //       "active"
+                  //     : ""
+                  // }
+                  >
+                    <Link>Favorite</Link>
                   </li>
                 </ul>
               </div>
@@ -531,6 +541,18 @@ export default function Navbar() {
                         Register
                       </Link>
                     )}
+                    <Link
+                      onClick={() => {
+                        setIsRegistrationOpen(true);
+                      }}
+                      className="me-3 login-log"
+                    >
+                      <FaRegUserCircle
+                        className="me-2"
+                        style={{ fontSize: "20px" }}
+                      />{" "}
+                      Login
+                    </Link>
                     <Button
                       className="navbar-search-button w-100"
                       onClick={() => {
