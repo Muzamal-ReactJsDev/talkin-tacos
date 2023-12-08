@@ -1,0 +1,27 @@
+.card-container{
+    margin-top: 8%;
+}
+.card-main-div{
+    display: flex;
+    justify-content: space-between;
+    padding: 7%;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.card-main-div:hover{
+    transform: translateY(-5px);
+}
+.cardIcon{
+    font-size: 30px;
+}
+.card-style{
+    display: flex;
+    align-items: center;
+
+}
+.deleteIcon{
+    font-size: 30px;
+    color: red;
+}

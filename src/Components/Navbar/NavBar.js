@@ -392,7 +392,7 @@
 import { useState } from "react";
 import "./Navbar.css";
 import { FaRegUserCircle } from "react-icons/fa";
-import logo from "../Images/Talkin Logo.webp";
+import logo from "../Images/NepalDos.jpeg";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import SideBar from "./SideBar";
 import { RxCross2 } from "react-icons/rx";
@@ -401,6 +401,7 @@ import { useSelector } from "react-redux";
 import Cart from "../Cart/Cart";
 import SignupForm from "../Auth/SignUp/SignUp";
 import HumburgerMenu from "./HumbergerMenu";
+import PhoneNumber from "../Auth/PhoneNumber/PhoneNumber";
 export default function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -438,7 +439,7 @@ export default function Navbar() {
           <Col className="p-0 m-0">
             <nav className="navigation">
               <Link to="/" className="brand-name">
-                <img src={logo} alt="logo" />
+                <img className="NepalDosLogo" src={logo} alt="logo" />
               </Link>
               <button
                 className="hamburger"
@@ -490,25 +491,8 @@ export default function Navbar() {
                   >
                     <Link>Locations</Link>
                   </li>
-                  <li
-                  // className={
-                  //   location.pathname === "/OurStory"
-                  //     ? // location.pathname === "/locations"
-                  //       "active"
-                  //     : ""
-                  // }
-                  >
-                    <Link to="/Order">Order</Link>
-                  </li>
-                  <li
-                  // className={
-                  //   // location.pathname === "/OurStory"
-                  //     ?  location.pathname === "/locations"
-                  //       "active"
-                  //     : ""
-                  // }
-                  >
-                    <Link>Favorite</Link>
+                  <li>
+                    <Link to="/OurStory">Story</Link>
                   </li>
                 </ul>
               </div>
@@ -541,18 +525,6 @@ export default function Navbar() {
                         Register
                       </Link>
                     )}
-                    <Link
-                      onClick={() => {
-                        setIsRegistrationOpen(true);
-                      }}
-                      className="me-3 login-log"
-                    >
-                      <FaRegUserCircle
-                        className="me-2"
-                        style={{ fontSize: "20px" }}
-                      />{" "}
-                      Login
-                    </Link>
                     <Button
                       className="navbar-search-button w-100"
                       onClick={() => {
@@ -610,6 +582,7 @@ export default function Navbar() {
                 <RxCross2 style={{ color: "white" }} />
               </button>
               <SignupForm closeRegistration={handlecloseRegistration} />
+              {/* <PhoneNumber closeRegistration={handlecloseRegistration} /> */}
             </div>
           </Col>
         </Row>

@@ -101,7 +101,7 @@ const Cart = ({ closeCart }) => {
   // localStorage.setItem("Order_Amount", totalPrice);
 
   const routeChange = () => {
-    let path = `/Payment`;
+    let path = `/AddAddress`;
     navigate(path);
   };
 
@@ -152,7 +152,6 @@ const Cart = ({ closeCart }) => {
           );
         })}
       </Container>
-
       <Container>
         <DiscountandCharges />
       </Container>

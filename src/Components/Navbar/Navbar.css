@@ -1,3 +1,9 @@
+.NepalDosLogo{
+  width: 100%;
+  max-width: 50px;
+    height: auto;
+    object-fit: cover;
+}
 .navbar-container {
   margin: 0px !important;
   padding: 0px !important;

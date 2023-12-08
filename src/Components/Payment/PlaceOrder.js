@@ -453,7 +453,7 @@ function PlaceOrder() {
       setTotalPrice(parseFloat(TotalPrice));
       setFormData({ ...formData, order_amount: parseFloat(TotalPrice) });
     }
-  
+
     // Fetch and update latitude and longitude values here from localStorage if needed
   }, []); // Empty dependency array to run the effect only once
   const handleSubmit = async (e) => {

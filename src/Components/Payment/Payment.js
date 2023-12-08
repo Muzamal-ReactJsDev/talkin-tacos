@@ -47,6 +47,7 @@ function PaymentMethodForm() {
         console.log("Payment method created successfully");
         alert("Payment method created successfully");
         navigate("/PaymentCardList");
+        // navigate("/AddAddress");
       } else {
         // Handle error
         console.error("Error creating payment method");

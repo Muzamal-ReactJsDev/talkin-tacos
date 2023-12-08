@@ -7,11 +7,14 @@
 }
 
 .address-card {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 300px;
+  width: 100%;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -52,4 +55,9 @@
   color: white !important;
   margin-top: 40px;
   text-decoration: none !important;
+}
+.dropdown-split-style{
+  background-color: #06b906 !important;
+  border: none;
+  color:black  !important;
 }

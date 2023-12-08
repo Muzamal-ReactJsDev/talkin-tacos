@@ -5,7 +5,7 @@ import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import api from "../BaseApi";
-
+import { Resturant_id_Globally } from "../../../Resutrant_Id";
 import InputMask from "react-input-mask";
 import { RxCross2 } from "react-icons/rx";
 import LogInForm from "../Login/Login";
@@ -17,7 +17,8 @@ const SignupForm = ({ closeRegistration }) => {
     l_name: "",
     email: "",
     phone: "",
-
+    restaurant_id: Resturant_id_Globally,
+    // restaurant_id:"",
     password: "",
   };
   const validationSchema = Yup.object().shape({
@@ -30,17 +31,40 @@ const SignupForm = ({ closeRegistration }) => {
         /^\(\d{3}\) \d{3}-\d{4}$/,
         "Invalid phone number. Use the format (123) 456-7890"
       ),
-
+    restaurant_id: Yup.string()
+      .required("Restaurant ID is required")
+      .nullable(),
     password: Yup.string().required("Password is required"),
   });
   const handleCloseLogin = () => {
     setIsLogInOpen(false);
   };
+
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    // Remove spaces and special characters from the phone number
+    const formattedPhoneNumber = values.phone.replace(/[^\d]/g, "");
+
+    // Add the +1 country code to the phone number
+    const phoneNumberWithCountryCode = `+1${formattedPhoneNumber}`;
+    // const SignUpData={
+    //   f_name: values.f_name,
+    //   l_name:values.l_name ,
+    //   email: values.email,
+    //   phone: phoneNumberWithCountryCode,
+    //   restaurant_id: Resturant_id_Globally,
+    //   // restaurant_id:"",
+    //   password: values.password,
+    // }
+    values.phone = phoneNumberWithCountryCode;
+    values.restaurant_id = Resturant_id_Globally;
+
+    console.log("Form values being sent:", values);
     await api
       .post("/auth/registration", values)
       .then((response) => {
+        // console.log(response.config.data);
         console.log(response.config.data);
+
         alert("You are Registered Successfully❤😎");
         // navigate("/");
         closeRegistration();
@@ -166,7 +190,29 @@ const SignupForm = ({ closeRegistration }) => {
                       </div>
                     </Col>
                   </Row>
-
+                  {/* <Row>
+                  <Col xs={12}>
+                    <div className="form-group">
+                      <label htmlFor="restaurant_id">Restaurant ID</label>
+                      <Field
+                        placeholder="Enter the Restaurant ID"
+                        type="number"
+                        name="restaurant_id"
+                        id="restaurant_id"
+                        className={`form-control ${
+                          errors.restaurant_id && touched.restaurant_id
+                            ? "is-invalid"
+                            : ""
+                        }`}
+                      />
+                      <ErrorMessage
+                        name="restaurant_id"
+                        component="div"
+                        className="invalid-feedback"
+                      />
+                    </div>
+                  </Col>
+                </Row> */}
                   <Row>
                     <Col xs={12}>
                       <div className="form-group">
@@ -221,7 +267,6 @@ const SignupForm = ({ closeRegistration }) => {
               setIsLogInOpen(false);
               closeRegistration();
             }}
-            
           >
             <RxCross2 style={{ color: "white" }} />
           </button>

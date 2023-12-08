@@ -2,8 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import DefaultPaymentCard from "./DefaultPaymentCard";
+import "./PaymentCardList.css";
 import { useNavigate } from "react-router-dom";
-
+import { FaRegCreditCard } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
+import PlaceOrder from "./PlaceOrder";
 const PaymentCardList = () => {
   const [paymentCards, setPaymentCards] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -40,45 +43,46 @@ const PaymentCardList = () => {
 
   return (
     <>
-      <Container style={{ color: "white" }}>
+      <Container className="card-container">
         <Row>
-          <Col>
-            <div className="">
-              {/* <br />
-              <br />
-              <br />
-              <br />
-              <br /> */}
-              <h1>Payment Cards</h1>
-              {paymentCards.length === 0 ? (
-                <p>List is empty</p>
-              ) : (
-                <>
-                  {loading ? <p>Loading...</p> : null}
-                  <ul>
-                    {paymentCards.map((card) => (
-                      <li key={card.id}>
-                        {/* Render the card details as needed */}
-                        <span className="listfont">Id: </span> {card.id}
-                        &nbsp;&nbsp;&nbsp;
-                        <span className="listfont">User Id : </span>{" "}
-                        {card.user_id}&nbsp;&nbsp;&nbsp;
-                        <span className="listfont">Payment-Id: </span>{" "}
-                        {card.payment_id}&nbsp;&nbsp;&nbsp;
-                        <span className="listfont">Payment Type: </span>{" "}
-                        {card.payment_type}
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
-          </Col>
+          <h1 className="mb-3" style={{ color: "white" }}>
+            Payment Cards
+          </h1>
+          {paymentCards.length === 0 ? (
+            //
+            <p>List is empty</p>
+          ) : (
+            <>
+              {loading ? <p>Loading...</p> : null}
+
+              {paymentCards.map((card) => (
+                <Col md={6} xs={12}>
+                  <div key={card.id} className="card-main-div">
+                    <div className="card-style">
+                      <FaRegCreditCard className="cardIcon" />
+                    </div>
+                    <div>
+                      <div className="card-style">{card.customer_account}</div>{" "}
+                      <div className="card-style">
+                        ****{card.card_no}
+                      </div>{" "}
+                    </div>
+                    <div className="card-style">
+                      <AiFillDelete className="deleteIcon" />
+                    </div>{" "}
+                  </div>
+                </Col>
+              ))}
+            </>
+          )}
         </Row>
       </Container>
       {/* <div>
         <DefaultPaymentCard />
       </div> */}
+      <div>
+        <PlaceOrder />
+      </div>
     </>
   );
 };

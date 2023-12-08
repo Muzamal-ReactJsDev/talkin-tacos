@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../BaseApi";
+import { Resturant_id_Globally } from "../../../Resutrant_Id";
 import {
   Card,
   Row,
@@ -14,11 +15,11 @@ import {
 import { Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./Login.css";
-import Imglogo from "../../Images/Talkin Logo.webp";
+import Imglogo from "../../Images/NepalDos.jpeg";
 const validationSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("Invalid email address")
-    .required("email is required"),
+  // email: Yup.string()
+  //   .email("Invalid email address")
+  //   .required("email is required"),
   password: Yup.string()
     .min(3, "password must be at least 3 characters")
     .required("password is required"),
@@ -37,13 +38,16 @@ const LogInForm = ({ closeLogin }) => {
 
   const [showpassword, setShowpassword] = useState(false);
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    values.restaurant_id = Resturant_id_Globally;
+
+    console.log(values, "Values which i'm Sending");
+
     // agar direct api use karian gay to axios.post likhian gay agar api ko alag define karian gay to to wahan jo name likha ha wohii name likhian gay....
     await api
       .post("/auth/login", values)
       .then((response) => {
         console.log("Here is Token in Login", response.data.token);
         // setToken(response.data.token);
-
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("f_name", response.data.user.f_name);
         localStorage.setItem("Point", response.data.user.point);
@@ -75,16 +79,18 @@ const LogInForm = ({ closeLogin }) => {
           <Card.Body>
             <Formik
               initialValues={{
-                email: "",
+                // email: "",
+                email_or_phone: "",
+                // email: recieveemailLocally,
                 password: "",
-                restaurant_id: "",
+                // restaurant_id: "",
               }}
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
             >
               {({ handleSubmit, isSubmitting }) => (
                 <Form onSubmit={handleSubmit}>
-                  <Row className="mb-3">
+                  {/* <Row className="mb-3">
                     <Col xs={12}>
                       <Form.Group controlId="email">
                         <label htmlFor="email">Email</label>
@@ -102,8 +108,27 @@ const LogInForm = ({ closeLogin }) => {
                         />
                       </Form.Group>
                     </Col>
+                  </Row> */}
+                  <Row className="mb-3">
+                    <Col xs={12}>
+                      <Form.Group controlId="email_or_phone">
+                        <label htmlFor="phone">Email or Phone</label>
+                        <Field
+                          autoComplete="off"
+                          type="email_or_phone"
+                          name="email_or_phone"
+                          as={FormControl}
+                          maxLength="12"
+                          placeholder="Enter your email_or_phone"
+                        />
+                        <ErrorMessage
+                          name="email_or_phone"
+                          component="div"
+                          className="error-message"
+                        />
+                      </Form.Group>
+                    </Col>
                   </Row>
-
                   <Row className="mb-3">
                     <Col xs={12}>
                       <Form.Group controlId="password">
@@ -126,21 +151,6 @@ const LogInForm = ({ closeLogin }) => {
                       </Form.Group>
                     </Col>
                   </Row>
-                  <Form.Group controlId="restaurant_id">
-                    <label htmlFor="restaurant_id">Restaurant ID</label>
-                    <Field
-                      autoComplete="off"
-                      type="number"
-                      name="restaurant_id"
-                      as={FormControl}
-                      placeholder="Enter restaurant ID"
-                    />
-                    <ErrorMessage
-                      name="restaurant_id"
-                      component="div"
-                      className="error-message"
-                    />
-                  </Form.Group>
                   <Button
                     style={{ background: "rgb(221, 153, 51)" }}
                     className="LoginSubmitt mt-3"
@@ -160,3 +170,4 @@ const LogInForm = ({ closeLogin }) => {
   );
 };
 export default LogInForm;
+////
