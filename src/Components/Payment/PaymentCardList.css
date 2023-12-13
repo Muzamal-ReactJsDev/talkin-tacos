@@ -2,6 +2,7 @@
     margin-top: 8%;
 }
 .card-main-div{
+    margin: 7px 0px;
     display: flex;
     justify-content: space-between;
     padding: 7%;

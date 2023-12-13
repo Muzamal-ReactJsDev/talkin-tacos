@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import DefaultPaymentCard from "./DefaultPaymentCard";
 import "./PaymentCardList.css";
 import { useNavigate } from "react-router-dom";
 import { FaRegCreditCard } from "react-icons/fa";
@@ -40,6 +39,9 @@ const PaymentCardList = () => {
         setLoading(false);
       });
   }, []);
+  const handleLocationClick = (selectedAddress) => {
+    console.log(selectedAddress,"hh")
+  };
 
   return (
     <>
@@ -56,8 +58,11 @@ const PaymentCardList = () => {
               {loading ? <p>Loading...</p> : null}
 
               {paymentCards.map((card) => (
-                <Col md={6} xs={12}>
-                  <div key={card.id} className="card-main-div">
+                <Col md={6} xs={12} >
+                  <div key={card.id} className="card-main-div"
+                  onClick={() => {
+                    handleLocationClick(card);
+                  }}>
                     <div className="card-style">
                       <FaRegCreditCard className="cardIcon" />
                     </div>
@@ -77,9 +82,6 @@ const PaymentCardList = () => {
           )}
         </Row>
       </Container>
-      {/* <div>
-        <DefaultPaymentCard />
-      </div> */}
       <div>
         <PlaceOrder />
       </div>
@@ -88,3 +90,5 @@ const PaymentCardList = () => {
 };
 
 export default PaymentCardList;
+
+// /////////

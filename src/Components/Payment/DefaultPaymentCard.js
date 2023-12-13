@@ -60,7 +60,6 @@ function DefaultPaymentCard() {
       setIsLoading(false); // Reset loading state
     }
   };
-
   return (
     <>
       <br />

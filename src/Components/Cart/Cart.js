@@ -101,7 +101,8 @@ const Cart = ({ closeCart }) => {
   // localStorage.setItem("Order_Amount", totalPrice);
 
   const routeChange = () => {
-    let path = `/AddAddress`;
+    // let path = `/AddAddress`;
+    let path = `default`;
     navigate(path);
   };
 

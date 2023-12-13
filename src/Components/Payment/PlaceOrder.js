@@ -528,10 +528,10 @@ function PlaceOrder() {
 
   return (
     <div>
+      {/* <br />
       <br />
       <br />
-      <br />
-      <br />
+      <br /> */}
       <h2 className="form-placeOrder text-center" style={{ color: "white" }}>
         Place an Order
       </h2>

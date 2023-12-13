@@ -1,82 +1,10 @@
-// import React from "react";
-// import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
-// const MapComponents = ({ onLocationSelect, latitude, longitude }) => {
-//   const mapContainerStyle = {
-//     width: "100%",
-//     height: "500px", // Adjust the height as needed
-//   };
-
-//   const center = {
-//     lat: parseFloat(latitude),
-//     lng: parseFloat(longitude),
-//   };
-
-//   const handleMapClick = (e) => {
-//     const clickedLatitude = e.latLng.lat();
-//     const clickedLongitude = e.latLng.lng();
-
-//     // Pass the clicked latitude and longitude to the parent component's callback function
-//     onLocationSelect({ latitude: clickedLatitude, longitude: clickedLongitude });
-//   };
-
-//   return (
-//     <LoadScript googleMapsApiKey="AIzaSyDfhaVxzlkVqMGcbu5FQuoi7rhQJBWqo5E">
-//       <GoogleMap
-//         mapContainerStyle={mapContainerStyle}
-//         center={center}
-//         zoom={15}
-//         onClick={handleMapClick}
-//       >
-//         <Marker position={center} />
-//       </GoogleMap>
-//     </LoadScript>
-//   );
-// };
-
-// export default MapComponents;
-
-
-// import React from "react";
-// import { GoogleMap, LoadScript } from "@react-google-maps/api";
-
-// const MapComponents = () => {
-//   const mapContainerStyle = {
-//     width: "100%",
-//     height: "500px",
-//   };
-
-//   const center = {
-//     lat: 20, // Set the latitude of the center of the country
-//     lng: 0,  // Set the longitude of the center of the country
-//   };
-
-//   const mapOptions = {
-//     zoom: 4, // Adjust the zoom level as needed
-//     center: center,
-//   };
-
-//   return (
-//     <LoadScript googleMapsApiKey="AIzaSyDfhaVxzlkVqMGcbu5FQuoi7rhQJBWqo5E">
-//       <GoogleMap
-//         mapContainerStyle={mapContainerStyle}
-//         options={mapOptions}
-//       />
-//     </LoadScript>
-//   );
-// };
-
-// export default MapComponents;
-
-
-
 import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const MapComponents = ({ onLocationSelect }) => {
   const mapContainerStyle = {
     width: "100%",
-    height: "500px",
+    height: "460px",
   };
 
   const center = {

@@ -1,0 +1,64 @@
+.default-main-row {
+  overflow-x: scroll;
+  display: flex;
+}
+
+.default-main-row::-webkit-scrollbar {
+  width: 0.5px;
+}
+.default-main-div {
+  margin: 0px 5px;
+  width: 220px;
+  padding: 8px;
+  display: flex;
+  border-radius: 10px;
+  background-color: white;
+}
+.default-home {
+  align-items: center;
+  display: flex;
+  /* width: 50px; */
+}
+
+.default-home-icon {
+  font-size: 25px;
+}
+.default-address {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  align-items: start;
+  height: 74px;
+  margin-left: 30px;
+}
+.default-address-address {
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ///////// */
+.default-main-div {
+  /* Your existing styles for address cards */
+  border: 1px solid transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.default-main-div.selected {
+  /* Additional styles for the selected address */
+  /* border-color: #06b906; Change this to your desired border color */
+  border: 2px solid #06b906;
+  position: relative;
+}
+
+.tick-icon {
+  /* Styles for the tick icon */
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #06b906;
+  border-radius: 50%;
+  color: white; /* Change this to your desired tick color */
+}

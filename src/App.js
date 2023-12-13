@@ -10,6 +10,7 @@ import PlaceOrder from "./Components/Payment/PlaceOrder";
 import Footer from "./Components/Footer/Footer";
 import AddAddress from "./Components/Payment/AddAddres";
 import ShowAddAddress from "./Components/Payment/ShowAddAddress";
+import Default from "./Components/Payment/DefaultComponents/Default.js";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/AddAddress" element={<AddAddress />} />
           <Route path="/ShowAddAddress" element={<ShowAddAddress />} />
           <Route path="/PlaceOrder" element={<PlaceOrder />} />
+          <Route path="default" element={<Default/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
