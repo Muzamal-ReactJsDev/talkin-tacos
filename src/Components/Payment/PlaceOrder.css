@@ -1,6 +1,7 @@
 .custom-order-form {
-    max-width: 400px;
-    margin: 0 auto;
+    /* max-width: 400px; */
+    /* margin: 0 auto; */
+    margin: 14px;
     padding: 20px;
     background: #f7f7f7;
     border: 1px solid #ddd;
@@ -43,3 +44,77 @@
     background: #06b906;
   }
   
+
+  /*  */
+
+
+
+/* Tab Container */
+.tab-container {
+  display: flex;
+  /* justify-content: space-around; */
+  /* background-color: #f0f0f0; */
+  padding: 10px 0;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.tab.active {
+  background-color: #06b906;
+  color: white;
+}
+
+/* Date Tabs Container */
+.date-tabs-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.date-tab {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.date-tab.selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* PlaceOrder.css */
+
+/* ... (previous styles) ... */
+
+/* Time Slots Container */
+.time-slots-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 10px 0;
+  /* Optional: Ensure flexibility for smaller devices */
+  flex-wrap: nowrap;
+}
+
+/* Hide horizontal scrollbar */
+.time-slots-container::-webkit-scrollbar {
+  display: none;
+}
+
+.time-slot {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.time-slot.selected {
+  background-color: #06b906;
+  color: white;
+}

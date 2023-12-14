@@ -9,7 +9,7 @@ import { Resturant_id_Globally } from "../../../Resutrant_Id";
 import InputMask from "react-input-mask";
 import { RxCross2 } from "react-icons/rx";
 import LogInForm from "../Login/Login";
-const SignupForm = ({ closeRegistration }) => {
+const SignupForm = ({ closeRegistration, OpenRegistration }) => {
   const navigate = useNavigate();
   const [IsLogInOpen, setIsLogInOpen] = useState(false);
   const initialValues = {
@@ -270,7 +270,10 @@ const SignupForm = ({ closeRegistration }) => {
           >
             <RxCross2 style={{ color: "white" }} />
           </button>
-          <LogInForm closeLogin={handleCloseLogin} />
+          <LogInForm
+            closeLogin={handleCloseLogin}
+            OpenRegistration={OpenRegistration}
+          />
         </div>
       </Container>
     </>

@@ -190,7 +190,10 @@ export default function Navbar() {
               >
                 <RxCross2 style={{ color: "white" }} />
               </button>
-              <SignupForm closeRegistration={handlecloseRegistration} />
+              <SignupForm closeRegistration={handlecloseRegistration}
+              OpenRegistration={()=>{
+                setIsRegistrationOpen(true);
+              }}/>
               {/* <PhoneNumber closeRegistration={handlecloseRegistration} /> */}
             </div>
           </Col>

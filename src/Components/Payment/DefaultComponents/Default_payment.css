@@ -1,0 +1,23 @@
+.default-Payment {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  height: 80px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  border: 3px solid #06b906;
+  position: relative;
+}
+.default-Payment-icons {
+  font-size: 25px;
+  color: blue !important;
+}
+
+.default-tick-icon {
+  color: #06b906;
+  right: 5px;
+  font-size: 25px;
+  position: absolute;
+  top: 5px;
+}

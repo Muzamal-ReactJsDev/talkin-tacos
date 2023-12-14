@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Footer.css";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import logo from "../Images/Talkin Logo.webp";
+import logo from "../Images/NepalDos.jpeg";
 import { LiaFacebook, LiaInstagram } from "react-icons/lia";
 import { RxCross2 } from "react-icons/rx";
 import SideBar from "../Navbar/SideBar";

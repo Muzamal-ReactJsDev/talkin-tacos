@@ -2,6 +2,15 @@
     margin-top: 8%;
 }
 .card-main-div{
+    /*  */
+
+
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+
+    /*  */
     margin: 7px 0px;
     display: flex;
     justify-content: space-between;
@@ -26,3 +35,39 @@
     font-size: 30px;
     color: red;
 }
+
+  .selected-card {
+
+    border: 3px solid #06b906 ;
+  }
+  .default-card {
+    border: 3px solid #06b906; /* Green border for the default card */
+    position: relative; /* Ensure proper positioning for child elements */
+  }
+  
+  /* .tick-icon {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #06b906;
+    border-radius: 50%;
+    color: white;
+  } */
+
+  .tick-sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 5px; /* Adjust top position as needed */
+    right: 5px; /* Adjust right position as needed */
+    font-size: 15px;
+    background-color: #06b906;
+    border-radius: 50%;
+    color: white;
+  }
+  

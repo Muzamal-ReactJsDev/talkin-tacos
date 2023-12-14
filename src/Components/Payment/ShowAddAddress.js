@@ -39,6 +39,9 @@ function ShowAddAddress() {
     fetchData();
   }, []);
 
+  // const handleShowdata = (recievingData) => {
+  //   console.log(recievingData, "Recieving Data");
+  // };
   return (
     <Container style={{ marginTop: "100px" }}>
       <h1 className="text-center mt-4" style={{ color: "white" }}>
@@ -47,7 +50,13 @@ function ShowAddAddress() {
       <Row className="address-container">
         {addresses.map((addaddress) => (
           // <Col key={addaddress.id} lg={4} md={6} xs={12}>
-          <Col key={addaddress.id} xs={12}>
+          <Col
+            key={addaddress.id}
+            xs={12}
+            // onClick={() => {
+            //   handleShowdata(addaddress);
+            // }}
+          >
             <div className="address-card">
               <div className="address-details">
                 <span>
