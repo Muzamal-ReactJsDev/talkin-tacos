@@ -5,6 +5,7 @@ import { FaRegCreditCard } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import "./Default_payment.css";
+import { Link } from "react-router-dom";
 const Default_PaymentList = () => {
   const [defaultDataCard, setDefaultData] = useState(null);
   const { totalPrice } = useSelector((state) => state.app);
@@ -42,9 +43,12 @@ const Default_PaymentList = () => {
     <div>
       <Container>
         <div>
+          <div className="main-default-heading">
           <h4 className="" style={{ color: "white" }}>
             Payment Method
           </h4>
+          <Link to="/PaymentCardList" className="edit-default">Edit</Link>
+          </div>
           {defaultDataCard ? (
             <div className="default-Payment">
               <div className="default-Payment-icons">

@@ -122,7 +122,7 @@
 /////here i define a const for Resturant ID........
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import {Resturant_id_Globally} from "../../Resutrant_Id"
+import { Resturant_id_Globally } from "../../Resutrant_Id";
 const restaurantId = Resturant_id_Globally; // Define the restaurant ID here
 export const postApi = createApi({
   reducerPath: "postApi",
@@ -177,6 +177,13 @@ export const postApi = createApi({
         method: "GET",
       }),
     }),
+    // this for the scroll bar
+    getAllScrollarData: builder.query({
+      query: () => ({
+        url: `/api/v1/categories?restaurant_id=${restaurantId}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
@@ -187,4 +194,5 @@ export const {
   useGetAllRecomendedProductQuery,
   useGetAllGoogleMapLocationQuery,
   useGetAllBranchesLocationQuery,
+  useGetAllScrollarDataQuery,
 } = postApi;

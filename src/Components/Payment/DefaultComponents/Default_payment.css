@@ -1,3 +1,11 @@
+.main-default-heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.edit-default{
+  color: white;
+}
 .default-Payment {
   display: flex;
   justify-content: space-between;

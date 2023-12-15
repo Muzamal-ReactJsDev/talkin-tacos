@@ -10,6 +10,8 @@ import {
   useGetAllImageProductsQuery,
   useGetAllPopularItemsQuery,
 } from "../../Service/Service";
+import { BeatLoader } from "react-spinners";
+import Spinner from "../Spinner";
 const PopularItems = () => {
   const [modalValue, setModalValue] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null); // Track selected item
@@ -80,7 +82,8 @@ const PopularItems = () => {
               ))}
             </>
           ) : (
-            <h6>Loading....... Please Wait</h6>
+            // <h6>Loading....... Please Wait</h6>
+            <Spinner />
           )}
         </Row>
       </Container>

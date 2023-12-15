@@ -204,7 +204,7 @@ const SideBar = () => {
                       <Button className="SideBar-button-1">Order</Button>
                     </div>
 
-                    {data?.restaurant_schedule_time?.length > 0 && (
+                    {/* {data?.restaurant_schedule_time?.length > 0 && (
                       <>
                         <BiTime className="SideBar-Icon" key={id} />
                         &nbsp;
@@ -215,7 +215,7 @@ const SideBar = () => {
                           )}
                         </text>
                       </>
-                    )}
+                    )} */}
 
                     <div>
                       <text>

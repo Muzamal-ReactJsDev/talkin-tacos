@@ -37,6 +37,7 @@ const HumburgerMenu = () => {
               ☰
             </div>
           </div>
+          <br />
 
           {show && (
             <>
@@ -47,25 +48,29 @@ const HumburgerMenu = () => {
                       <h6>{ProfileName}</h6>
                     </div>
                     <div>{ProfileEmail}</div>
-                    {/* <div>Point: {ProfilePoint}</div> */}
+                    <div>Point: {ProfilePoint}</div>
                   </div>
                 </div>
+                <br />
+                <br />
+                <br />
+                <br />
                 <ul className="hamburger-menu-links">
                   <li>
                     <Link to="/" className="hamburger-menu-style">
                       <FaHome className="humburger-menu-icons" />
+                      Home
                     </Link>
-                    Home
                   </li>
-                  <li>
+                  {/* <li>
                     {" "}
                     <Link to="/Profile" className="hamburger-menu-style">
                       <CgProfile className="humburger-menu-icons" /> Profile
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     {" "}
-                    <Link to="/Address" className="hamburger-menu-style">
+                    <Link to="/AddAddress" className="hamburger-menu-style">
                       <FaMapMarkedAlt className="humburger-menu-icons" />{" "}
                       Address
                     </Link>
@@ -76,37 +81,37 @@ const HumburgerMenu = () => {
                       <FaStore className="humburger-menu-icons" /> Choose Store
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/Inbox" className="hamburger-menu-style">
                       <MdOutlineNotificationsActive className="humburger-menu-icons" />{" "}
                       Inbox
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
-                    <Link to="/Wallet" className="hamburger-menu-style">
+                    <Link to="/Payment" className="hamburger-menu-style">
                       <FaWallet className="humburger-menu-icons" /> Wallet
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/Support" className="hamburger-menu-style">
                       {" "}
                       <BiSupport className="humburger-menu-icons" /> Support &
                       Feedback
                     </Link>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     {" "}
                     <Link to="/Privacy" className="hamburger-menu-style">
                       <MdPrivacyTip className="humburger-menu-icons" /> Privacy
                       Policy
                     </Link>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     <Link to="/Terms" className="hamburger-menu-style">
                       <SiIterm2 className="humburger-menu-icons" /> Terms &
                       Condition{" "}
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/About-Us" className="hamburger-menu-style">
                       <IoIosPeople className="humburger-menu-icons" /> About Us

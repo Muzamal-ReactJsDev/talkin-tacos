@@ -4,7 +4,7 @@ import { Button, Col, Container, Dropdown, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaHome, FaCheck } from "react-icons/fa"; // Imported FaCheck icon
 import "./Default_AddressAdd.css";
-
+import { FaPlus } from "react-icons/fa6";
 function Default_AddressAdd() {
   const [addresses, setAddresses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,9 +52,13 @@ function Default_AddressAdd() {
 
   return (
     <Container>
-      <h4 className="mt-3 ms-2" style={{ color: "white" }}>
+      <div className="deliveryAddress-default-heading">
+      <h5 className="mt-3 ms-2" style={{ color: "white" }}>
         Delivery Address
-      </h4>
+      </h5>
+      <div style={{color:"white"}}><Link to="/ShowAddAddress" style={{textDecoration:"none",color:"white"}}><FaPlus className="deliveryAddress-icon" />&nbsp;Add</Link></div>
+      
+      </div>
       <div className="default-main-row">
         {addresses.map((addaddress) => (
           <div

@@ -101,7 +101,7 @@ export default function Navbar() {
                     <Link>Locations</Link>
                   </li>
                   <li>
-                    <Link to="/OurStory">Story</Link>
+                    <Link to="/OurStory">Order</Link>
                   </li>
                 </ul>
               </div>

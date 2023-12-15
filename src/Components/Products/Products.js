@@ -16,7 +16,7 @@ import ProductsBar from "./ProductsBars/ProductsBar";
 
 const Products = () => {
   const Menudata =
-    "Join Brickell Rewards to get free items when you order here →";
+    "Join Nepal Rewards to get free items when you order here →";
   return (
     <>
       <br />
@@ -25,26 +25,23 @@ const Products = () => {
       <div className="mt-3">
         <BelowNav Menudata={Menudata} />
       </div>
-      <br />
+      {/* <br />
       <br />
       <br />
       <div>
         <Ordering />
-      </div>
-      <br />
-      <br />
-      <br />
+      </div> */}
       <div>
         <ProductsBar />
       </div>
-      <br />
+      {/* <br />
       <br />
       <br />
       <div>
         <TopPics />
-      </div>
-      <br />
-      <br />
+      </div> */}
+      {/* <br />
+      <br /> */}
       <br />
       <div>
         <PopularItems />

@@ -9,6 +9,7 @@ import {
   useGetAllPostQuery,
 } from "../../Service/Service";
 import Modal from "../Modal/Modal";
+import Spinner from "../Spinner";
 const Entrees = () => {
   const [modalValue, setModalValue] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null); // Track selected item
@@ -75,7 +76,8 @@ const Entrees = () => {
               ))}
             </>
           ) : (
-            <h6>Loading....... Please Wait</h6>
+            // <h6>Loading....... Please Wait</h6>
+            <Spinner/>
           )}
         </Row>
       </Container>

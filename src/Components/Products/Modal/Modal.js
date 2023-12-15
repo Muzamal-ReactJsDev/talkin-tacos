@@ -352,6 +352,7 @@ import {
   useGetAllRecomendedProductQuery,
 } from "../../Service/Service";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../Spinner";
 function Example({ show, handleOpen, handleClose, modalData, modalImage }) {
   const [fullscreen, setFullscreen] = useState(true);
   const [quantity, setQuantity] = useState(1);
@@ -532,7 +533,8 @@ function Example({ show, handleOpen, handleClose, modalData, modalImage }) {
                     ))}
                   </>
                 ) : (
-                  <h6>Loading....... Please Wait</h6>
+                  // <h6>Loading....... Please Wait</h6>
+                  <Spinner/>
                 )}
                 
                 <div className="Modal-cart-button-div">

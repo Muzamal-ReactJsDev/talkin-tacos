@@ -1,13 +1,25 @@
-.productsBar-main-div{
-    background-color: rgb(13, 13, 13);
+.main-scroll-bar{
+    width: 100% !important;
+    background-color: black;
     color: white !important;
-   
+    padding: 10px;
 }
+/* .main-container{
+    margin: 0px;
+    padding: 0px;
+} */
+
 .productsBar-ScrollLink{
-    justify-content: center;
+    
+    /* justify-content: center; */
+    justify-content: space-between;
+    /* justify-content: right; */
     align-items: center;
     display: flex;
+    /* flex-direction: column; */
     color: white !important;
     text-decoration: none;
     padding: 10px 20px !important;
 }
+
+

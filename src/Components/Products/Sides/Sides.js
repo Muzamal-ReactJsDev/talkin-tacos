@@ -9,6 +9,7 @@ import {
   useGetAllImageProductsQuery,
   useGetAllPostQuery,
 } from "../../Service/Service";
+import Spinner from "../Spinner";
 const Sides = () => {
   const [modalValue, setModalValue] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null); // Track selected item
@@ -77,7 +78,8 @@ const Sides = () => {
               ))}
             </>
           ) : (
-            <h6>Loading....... Please Wait</h6>
+            // <h6>Loading....... Please Wait</h6>
+            <Spinner/>
           )}
         </Row>
       </Container>

@@ -1,11 +1,10 @@
 import React from "react";
 import Founded from "./Founded";
 import DreamTalkin from "./DreamTalkin";
-import Footer from "../Footer/Footer";
-import ThanksBanner from "./ThanksBanner";
 const main = () => {
   return (
     <>
+      <br />
       <br />
       <br />
       <br />
@@ -17,12 +16,13 @@ const main = () => {
       <div>
         <DreamTalkin />
       </div>
+      {/* <br />
       <br />
       <br />
-      <br />
-      <ThanksBanner />
+      <ThanksBanner /> */}
     </>
   );
 };
 
 export default main;
+

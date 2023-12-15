@@ -1,0 +1,17 @@
+.data-history{
+    background-color: white;
+    margin: 5px;
+    border-radius: 15px;
+}
+.data-history-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.data-history-btn1{
+    width: 100%;
+    margin: 5px;
+    padding: 8px;
+    background-color: transparent;
+    border-radius: 10px;
+}

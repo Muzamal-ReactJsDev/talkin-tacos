@@ -194,6 +194,10 @@ const PaymentCardList = () => {
         console.log("Selected card set as default:", selectedCard.payment_id);
         setDefaultCardId(selectedCard.payment_id);
         localStorage.setItem("payment_id", selectedCard.payment_id);
+        setTimeout(() => {
+          navigate("/default")
+        }, 2000);
+       
         // Update UI or perform further actions based on the response if needed
       })
       .catch((error) => {
@@ -246,7 +250,7 @@ const PaymentCardList = () => {
             </>
           )}
         </Row>
-        <PlaceOrder/>
+        {/* <PlaceOrder/> */}
       </Container>
 
     </>
